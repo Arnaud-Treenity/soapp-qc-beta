@@ -1,0 +1,1551 @@
+{
+  "catalog": {
+    "id": "sodexo-uem-packaging-guidelines",
+    "name": "Sodexo UEM Packaging Guidelines Rules",
+    "version": "0.1.0",
+    "status": "draft",
+    "created_at": "2026-09-15",
+    "language": "en",
+    "source_document": {
+      "name": "GLB - UEM - Gudelines Packaging.docx",
+      "path": "/Users/alorcestales/Documents/Treenity/_CLIENTS/Sodexo/Work/Application Governance/documentations/GLB - UEM - Gudelines Packaging.docx",
+      "document_date": "2025-09-08"
+    },
+    "purpose": "Convert Sodexo packaging guidelines into measurable controls for Intune application governance, quality review and future web-based compliance scoring.",
+    "scoring_model": {
+      "scale": 100,
+      "method": "weighted_domain_average",
+      "rule_weight_method": "relative_weights_normalized_within_each_domain",
+      "not_applicable_handling": "excluded_from_domain_denominator",
+      "default_rule_scores": {
+        "pass": 100,
+        "partial": 50,
+        "fail": 0,
+        "not_applicable": null
+      },
+      "domain_weights": {
+        "pre_validation": 15,
+        "source_files": 10,
+        "packaging": 20,
+        "testing": 15,
+        "intune_setup": 30,
+        "deployment": 10
+      },
+      "result_bands": [
+        {
+          "min": 90,
+          "max": 100,
+          "label": "compliant"
+        },
+        {
+          "min": 70,
+          "max": 89,
+          "label": "compliant_with_reserve"
+        },
+        {
+          "min": 40,
+          "max": 69,
+          "label": "remediation_required"
+        },
+        {
+          "min": 0,
+          "max": 39,
+          "label": "non_compliant"
+        }
+      ]
+    }
+  },
+  "field_definitions": {
+    "control_type": {
+      "automatic": "Can be checked from Intune, Graph API, CSV export, audit logs or repository metadata.",
+      "semi_automatic": "Can be pre-filled from data but requires human confirmation.",
+      "manual": "Requires documented evidence, governance validation or packaging review."
+    },
+    "severity": {
+      "critical": "Can block packaging, deployment or compliance approval.",
+      "high": "Creates operational, security or lifecycle risk and should be remediated.",
+      "medium": "Quality or standardization gap to be corrected during normal governance.",
+      "low": "Good practice or documentation improvement."
+    }
+  },
+  "rules": [
+    {
+      "id": "PRE-BIZ-001",
+      "domain": "pre_validation",
+      "phase": "request_intake",
+      "title": "Business justification is mandatory",
+      "requirement": "Every application request must include a clear business or functional justification before packaging starts.",
+      "source": {
+        "section": "Application Pre-Validation / Business & Functional Validation",
+        "paragraphs": [80, 84, 94]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 12,
+      "evidence_sources": ["itsm_packaging_request", "application_intake_form"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Business justification is documented and validated.",
+        "partial": "Business justification exists but lacks validation or clarity.",
+        "fail": "No clear business or functional justification is available."
+      },
+      "remediation": "Request the business justification from the requester or reject the packaging request."
+    },
+    {
+      "id": "PRE-OWN-001",
+      "domain": "pre_validation",
+      "phase": "request_intake",
+      "title": "Business and technical owners are identified",
+      "requirement": "The application must have designated business and technical owners.",
+      "source": {
+        "section": "Application Pre-Validation / Business & Functional Validation",
+        "paragraphs": [89, 150, 154]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 10,
+      "evidence_sources": ["itsm_packaging_request", "intune_all_apps", "graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Business and technical owners are present.",
+        "partial": "Only one owner type is documented or the owner naming is ambiguous.",
+        "fail": "No application owner is documented."
+      },
+      "remediation": "Define the owner taxonomy and update the intake record and Intune metadata."
+    },
+    {
+      "id": "PRE-DUP-001",
+      "domain": "pre_validation",
+      "phase": "request_intake",
+      "title": "Duplicate functionality is assessed",
+      "requirement": "The request must check whether the application duplicates an existing corporate tool. Consolidation must be prioritized when duplication exists.",
+      "source": {
+        "section": "Application Pre-Validation / Business & Functional Validation",
+        "paragraphs": [91]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 8,
+      "evidence_sources": ["intune_all_apps", "discovered_apps", "application_catalog", "itsm_packaging_request"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "No duplicate is found or consolidation decision is documented.",
+        "partial": "Potential duplicate exists but is not fully qualified.",
+        "fail": "Duplicate functionality is present with no documented decision."
+      },
+      "remediation": "Compare with the application catalog and document whether to package, consolidate or reject."
+    },
+    {
+      "id": "PRE-TYPE-001",
+      "domain": "pre_validation",
+      "phase": "request_intake",
+      "title": "Preferred application model is considered",
+      "requirement": "The request must evaluate web app first, Microsoft Store second, and Win32 packaging only when no better option is available.",
+      "source": {
+        "section": "Application Pre-Validation / Application Type Prioritization",
+        "paragraphs": [97, 101, 107, 113]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 10,
+      "evidence_sources": ["itsm_packaging_request", "application_intake_form"],
+      "applicability": ["win32", "msi", "msix", "store", "web"],
+      "evaluation": {
+        "pass": "Preferred model assessment is documented.",
+        "partial": "Assessment is incomplete but packaging rationale exists.",
+        "fail": "Win32 packaging is requested without model assessment."
+      },
+      "remediation": "Document why web or Store delivery is not suitable before approving Win32 packaging."
+    },
+    {
+      "id": "PRE-TECH-001",
+      "domain": "pre_validation",
+      "phase": "technical_assessment",
+      "title": "OS compatibility is validated",
+      "requirement": "The application must be validated against supported Windows versions before packaging.",
+      "source": {
+        "section": "Application Pre-Validation / Technical Prerequisites Validation",
+        "paragraphs": [121, 123]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 8,
+      "evidence_sources": ["packaging_documentation", "vendor_documentation", "test_evidence"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Supported OS versions are validated.",
+        "partial": "Compatibility is assumed but not evidenced.",
+        "fail": "No OS compatibility evidence exists."
+      },
+      "remediation": "Validate supported OS versions and document the result before packaging."
+    },
+    {
+      "id": "PRE-ARCH-001",
+      "domain": "pre_validation",
+      "phase": "technical_assessment",
+      "title": "Architecture compatibility is validated",
+      "requirement": "The application must support the required architecture. Deprecated 32-bit only applications must be reviewed carefully.",
+      "source": {
+        "section": "Application Pre-Validation / Technical Prerequisites Validation",
+        "paragraphs": [125]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 7,
+      "evidence_sources": ["vendor_documentation", "package_metadata", "graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Architecture is validated and aligned with the target fleet.",
+        "partial": "Architecture is known but exception review is missing.",
+        "fail": "Architecture compatibility is unknown."
+      },
+      "remediation": "Document x64 or ARM64 compatibility, or open an exception review for 32-bit only apps."
+    },
+    {
+      "id": "PRE-RUNTIME-001",
+      "domain": "pre_validation",
+      "phase": "technical_assessment",
+      "title": "Runtime admin privileges are prohibited",
+      "requirement": "Applications may require elevated rights during installation, but must not require elevated rights to run after installation.",
+      "source": {
+        "section": "Application Pre-Validation / Technical Prerequisites Validation",
+        "paragraphs": [131]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 12,
+      "evidence_sources": ["vendor_documentation", "local_test_evidence", "security_review"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Application runs without permanent admin privileges.",
+        "partial": "Admin runtime requirement is suspected but not confirmed.",
+        "fail": "Application requires permanent admin rights at runtime."
+      },
+      "remediation": "Reject the package or require an approved security exception and mitigation."
+    },
+    {
+      "id": "PRE-UPD-001",
+      "domain": "pre_validation",
+      "phase": "technical_assessment",
+      "title": "Update and patch management is documented",
+      "requirement": "The packaging assessment must confirm how updates are handled. Auto-update should be enabled when possible; exceptions must be justified and documented.",
+      "source": {
+        "section": "Application Pre-Validation / Technical Prerequisites Validation",
+        "paragraphs": [133]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 10,
+      "evidence_sources": ["packaging_documentation", "vendor_documentation", "application_catalog"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Update model is documented and exception is justified if needed.",
+        "partial": "Update model is documented but ownership is unclear.",
+        "fail": "No update or patching model is documented."
+      },
+      "remediation": "Document whether updates are automatic, manual or corporate-controlled."
+    },
+    {
+      "id": "PRE-EOL-001",
+      "domain": "pre_validation",
+      "phase": "technical_assessment",
+      "title": "End-of-life software is not permitted",
+      "requirement": "Applications no longer maintained or patched by the vendor must not be packaged.",
+      "source": {
+        "section": "Application Pre-Validation / Technical Prerequisites Validation",
+        "paragraphs": [137]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 12,
+      "evidence_sources": ["vendor_documentation", "security_review", "application_catalog"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Vendor support status is active.",
+        "partial": "Support status is unclear and requires confirmation.",
+        "fail": "Application is end-of-life or no longer patched."
+      },
+      "remediation": "Reject the request or identify a supported replacement."
+    },
+    {
+      "id": "PRE-COMP-001",
+      "domain": "pre_validation",
+      "phase": "approval",
+      "title": "Security licensing and data handling are validated",
+      "requirement": "The request must validate source legitimacy, vulnerability exposure, data handling and licensing before packaging proceeds.",
+      "source": {
+        "section": "Application Pre-Validation / Technical Prerequisites Validation",
+        "paragraphs": [139, 141, 143, 145, 149]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 11,
+      "evidence_sources": ["security_review", "license_review", "vendor_documentation", "itsm_packaging_request"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Security, privacy and licensing checks are documented.",
+        "partial": "Some checks are documented but approval is incomplete.",
+        "fail": "Required compliance checks are missing."
+      },
+      "remediation": "Escalate to UEM, security or licensing owners before packaging."
+    },
+    {
+      "id": "SRC-OFFICIAL-001",
+      "domain": "source_files",
+      "phase": "source_preparation",
+      "title": "Installer is obtained from official vendor source",
+      "requirement": "Source files must be obtained from official vendor or enterprise download locations to ensure authenticity and compliance.",
+      "source": {
+        "section": "Sources Files / Access the official Adobe Enterprise Portal",
+        "paragraphs": [246]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 18,
+      "evidence_sources": ["package_repository", "packaging_documentation", "vendor_portal_url"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Official source URL or vendor portal evidence is documented.",
+        "partial": "Source is plausible but not formally evidenced.",
+        "fail": "Installer source is unknown or non-official."
+      },
+      "remediation": "Replace the source with an official vendor download and update package evidence."
+    },
+    {
+      "id": "SRC-VERSION-001",
+      "domain": "source_files",
+      "phase": "source_preparation",
+      "title": "Version language and architecture selection are documented",
+      "requirement": "The selected version, language package and architecture must match the intended deployment scope.",
+      "source": {
+        "section": "Sources Files / Select the appropriate version",
+        "paragraphs": [257, 261]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 14,
+      "evidence_sources": ["package_repository", "packaging_documentation", "intune_all_apps"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Version, language and architecture are documented.",
+        "partial": "Only some source selection attributes are documented.",
+        "fail": "Source selection attributes are missing."
+      },
+      "remediation": "Document selected version, language and architecture before packaging."
+    },
+    {
+      "id": "SRC-LICENSE-001",
+      "domain": "source_files",
+      "phase": "source_preparation",
+      "title": "Enterprise distribution agreement is captured when required",
+      "requirement": "When vendor terms require an enterprise distribution agreement, evidence must be captured in the packaging documentation.",
+      "source": {
+        "section": "Editor Installation Instructions / EULA Handling & Distribution Agreement",
+        "paragraphs": [407, 467, 474, 478]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 18,
+      "evidence_sources": ["license_review", "packaging_documentation", "vendor_confirmation_email"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Distribution agreement evidence is documented where required.",
+        "partial": "Distribution requirement is identified but evidence is incomplete.",
+        "fail": "Required distribution evidence is missing."
+      },
+      "remediation": "Attach or reference vendor approval before production deployment."
+    },
+    {
+      "id": "SRC-DOC-001",
+      "domain": "source_files",
+      "phase": "source_preparation",
+      "title": "Vendor installation documentation is referenced",
+      "requirement": "Packaging teams must refer to official vendor documentation for current installation, update and command-line parameters.",
+      "source": {
+        "section": "Editor Installation Instructions / Reference Documentation",
+        "paragraphs": [313, 317, 332]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 12,
+      "evidence_sources": ["packaging_documentation", "vendor_documentation"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Official vendor documentation is referenced.",
+        "partial": "Documentation exists but is not linked to the package record.",
+        "fail": "No vendor documentation is referenced."
+      },
+      "remediation": "Add official vendor documentation links to the package record."
+    },
+    {
+      "id": "SRC-EULA-001",
+      "domain": "source_files",
+      "phase": "source_preparation",
+      "title": "Silent EULA handling is configured",
+      "requirement": "The package must handle EULA acceptance silently when required by the installer.",
+      "source": {
+        "section": "Editor Installation Instructions / Supported Command-line Parameters",
+        "paragraphs": [340, 398, 403]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 14,
+      "evidence_sources": ["package_configuration", "install_command", "local_test_evidence"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "EULA is handled silently and validated.",
+        "partial": "Silent EULA handling is configured but not tested.",
+        "fail": "Installer can pause or fail due to EULA interaction."
+      },
+      "remediation": "Add the vendor-supported silent EULA parameter and test installation."
+    },
+    {
+      "id": "SRC-DEPS-001",
+      "domain": "source_files",
+      "phase": "source_preparation",
+      "title": "Prerequisites and dependencies are identified",
+      "requirement": "System-level requirements, dependencies, runtime needs and network requirements must be assessed before packaging.",
+      "source": {
+        "section": "Editor Installation Instructions / Pre-requisites and Dependencies",
+        "paragraphs": [367, 371, 373, 375, 377, 381, 383]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 14,
+      "evidence_sources": ["vendor_documentation", "packaging_documentation", "local_test_evidence"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Prerequisites and dependencies are identified or explicitly not required.",
+        "partial": "Some prerequisites are documented but validation is incomplete.",
+        "fail": "Prerequisites are unknown."
+      },
+      "remediation": "Document prerequisites and include dependency handling or a no-dependency statement."
+    },
+    {
+      "id": "PKG-FORMAT-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "IntuneWin format is used for Intune Win32 deployment",
+      "requirement": "Applications deployed through the Intune Win32 app model must be packaged in IntuneWin format.",
+      "source": {
+        "section": "Packaging / Packaging Format",
+        "paragraphs": [536, 552]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 9,
+      "evidence_sources": ["package_repository", "intune_all_apps", "graph_mobile_apps"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Package is built as IntuneWin for Win32 deployment.",
+        "partial": "Package format is not visible in available metadata.",
+        "fail": "Package format is inconsistent with the Intune Win32 app model."
+      },
+      "remediation": "Rebuild the package using the IntuneWin preparation tool."
+    },
+    {
+      "id": "PKG-REPACK-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Repackaging is avoided unless justified",
+      "requirement": "Repackaging or transformation must be avoided unless absolutely necessary.",
+      "source": {
+        "section": "Packaging / Packaging Format",
+        "paragraphs": [552]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 6,
+      "evidence_sources": ["packaging_documentation", "package_repository"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "No repackaging is used or exception is justified.",
+        "partial": "Repackaging is suspected but not documented.",
+        "fail": "Repackaging is used without justification."
+      },
+      "remediation": "Prefer vendor installer parameters or document the exception."
+    },
+    {
+      "id": "PKG-SILENT-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Package supports silent unattended SYSTEM execution",
+      "requirement": "Packages must install silently, unattended and be compatible with SYSTEM-context deployment.",
+      "source": {
+        "section": "Packaging / Packaging Format and Tools and Scripts Used",
+        "paragraphs": [552, 556, 570]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 12,
+      "evidence_sources": ["install_command", "local_test_evidence", "package_configuration"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Silent unattended SYSTEM execution is validated.",
+        "partial": "Silent parameters exist but SYSTEM-context test evidence is missing.",
+        "fail": "Installation requires interaction or fails in SYSTEM context."
+      },
+      "remediation": "Fix silent arguments or installer logic and retest locally."
+    },
+    {
+      "id": "PKG-SCRIPT-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Custom scripts follow Sodexo constraints",
+      "requirement": "Custom scripts must support silent SYSTEM execution, centralized logging, naming conventions, no hardcoded credentials, modularity and local pre-testing.",
+      "source": {
+        "section": "Packaging / Tools and Scripts Used",
+        "paragraphs": [556, 570]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 10,
+      "evidence_sources": ["package_repository", "script_review", "local_test_evidence"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Script review confirms all constraints.",
+        "partial": "Script is functional but some constraints are not evidenced.",
+        "fail": "Script violates one or more critical constraints."
+      },
+      "remediation": "Refactor script to comply with Sodexo packaging constraints."
+    },
+    {
+      "id": "PKG-TOOLS-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Required packaging tools and detection approach are used",
+      "requirement": "Packagers must use the required packaging tools and include registry-based detection logic unless explicitly instructed otherwise.",
+      "source": {
+        "section": "Packaging / Tools and Scripts Used",
+        "paragraphs": [588, 590, 600]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 6,
+      "evidence_sources": ["packaging_documentation", "package_repository", "graph_detection_rules"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Required tools and detection approach are followed.",
+        "partial": "Required tooling is assumed but not documented.",
+        "fail": "Package deviates without instruction or justification."
+      },
+      "remediation": "Align packaging method and detection logic with the guideline or document exception."
+    },
+    {
+      "id": "PKG-FOLDER-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Standard folder structure is respected",
+      "requirement": "The prescribed folder structure and folder names must be followed precisely.",
+      "source": {
+        "section": "Packaging / Folder Structure and File Naming",
+        "paragraphs": [604, 618]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 10,
+      "evidence_sources": ["package_repository", "package_review"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Folder structure matches the packaging standard.",
+        "partial": "Minor optional content deviations are documented.",
+        "fail": "Required folders or names are missing or changed."
+      },
+      "remediation": "Reorganize source package according to the standard structure."
+    },
+    {
+      "id": "PKG-DETECT-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Detection short name is specific",
+      "requirement": "Detection naming must be specific enough to track the application without matching unrelated software.",
+      "source": {
+        "section": "Packaging / Install Uninstall Detection Logic",
+        "paragraphs": [644, 645, 646]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 8,
+      "evidence_sources": ["package_configuration", "script_review", "graph_detection_rules"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Detection identifier is specific and avoids unrelated products.",
+        "partial": "Detection identifier is plausible but broad.",
+        "fail": "Detection identifier is too generic and can match unrelated software."
+      },
+      "remediation": "Use a specific application identifier, product code or registry path."
+    },
+    {
+      "id": "PKG-REG-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "ProductCode or UninstallString is preferred for MSI detection",
+      "requirement": "MSI-based packages should use ProductCode or UninstallString values in the uninstall registry key when applicable.",
+      "source": {
+        "section": "Packaging / Install Uninstall Detection Logic",
+        "paragraphs": [669]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 7,
+      "evidence_sources": ["graph_detection_rules", "package_configuration", "registry_detection"],
+      "applicability": ["msi", "win32"],
+      "evaluation": {
+        "pass": "Detection uses ProductCode, UninstallString or an equivalent reliable key.",
+        "partial": "Detection uses registry but not the preferred key.",
+        "fail": "MSI detection is missing or unreliable."
+      },
+      "remediation": "Update detection to use MSI ProductCode or a reliable uninstall registry value."
+    },
+    {
+      "id": "PKG-PATH-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Binaries and scripts are placed in expected folders",
+      "requirement": "Binaries and scripts should be placed in expected folders. Absolute paths must be avoided unless strictly required.",
+      "source": {
+        "section": "Packaging / Install Uninstall Detection Logic",
+        "paragraphs": [724, 729, 746, 755, 757]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 7,
+      "evidence_sources": ["package_repository", "package_configuration"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Files are in expected folders or exception is justified.",
+        "partial": "Absolute paths are used but appear technically required.",
+        "fail": "Absolute paths are used without justification or expected folders are not used."
+      },
+      "remediation": "Move binaries/scripts to standard folders or document the exception."
+    },
+    {
+      "id": "PKG-JSON-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "JSON configuration is syntactically valid",
+      "requirement": "JSON configuration must use double backslashes for paths, double quotes for strings and no unsupported comments.",
+      "source": {
+        "section": "Packaging / Install Uninstall Detection Logic",
+        "paragraphs": [764, 766, 768]
+      },
+      "control_type": "automatic",
+      "severity": "high",
+      "weight_within_domain": 8,
+      "evidence_sources": ["package_configuration", "json_linter"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "JSON parses successfully and path escaping is valid.",
+        "partial": "JSON parses but style issues are detected.",
+        "fail": "JSON parsing fails or contains unsupported comments."
+      },
+      "remediation": "Fix JSON syntax and rerun packaging validation."
+    },
+    {
+      "id": "PKG-CUSTOM-001",
+      "domain": "packaging",
+      "phase": "package_build",
+      "title": "Vendor customization tooling is preferred when available",
+      "requirement": "Vendor customization tooling should be used when it improves consistency and reduces reliance on post-install scripts.",
+      "source": {
+        "section": "Packaging / Customization",
+        "paragraphs": [784, 809, 814]
+      },
+      "control_type": "manual",
+      "severity": "low",
+      "weight_within_domain": 5,
+      "evidence_sources": ["packaging_documentation", "vendor_documentation", "package_repository"],
+      "applicability": ["win32", "msi"],
+      "evaluation": {
+        "pass": "Customization is handled through vendor tooling or documented as not applicable.",
+        "partial": "Customization is handled by scripts with limited rationale.",
+        "fail": "Customization is undocumented or inconsistent."
+      },
+      "remediation": "Use vendor customization tooling where appropriate or document why it is not used."
+    },
+    {
+      "id": "TST-INSTALL-001",
+      "domain": "testing",
+      "phase": "local_validation",
+      "title": "Local installation test is mandatory",
+      "requirement": "The package must be tested locally before creating the IntuneWin app and uploading to Intune.",
+      "source": {
+        "section": "Local Testing & Validation / Installation Test",
+        "paragraphs": [818, 821, 842]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 18,
+      "evidence_sources": ["local_test_evidence", "packaging_documentation"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Local installation test evidence is present and successful.",
+        "partial": "Test evidence exists but is incomplete.",
+        "fail": "No local installation test evidence is available."
+      },
+      "remediation": "Run local install test and document results before Intune upload."
+    },
+    {
+      "id": "TST-UNINSTALL-001",
+      "domain": "testing",
+      "phase": "local_validation",
+      "title": "Local uninstallation test is mandatory",
+      "requirement": "The uninstallation process must be validated locally and must be silent.",
+      "source": {
+        "section": "Local Testing & Validation / Uninstallation Test",
+        "paragraphs": [843, 849, 853]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 16,
+      "evidence_sources": ["local_test_evidence", "packaging_documentation"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Silent uninstall test evidence is present and successful.",
+        "partial": "Uninstall test exists but silence or cleanup is not confirmed.",
+        "fail": "No uninstall validation exists or uninstall requires interaction."
+      },
+      "remediation": "Fix uninstall command and document local uninstall test."
+    },
+    {
+      "id": "TST-LOG-001",
+      "domain": "testing",
+      "phase": "local_validation",
+      "title": "Installer logs are generated in a standard location",
+      "requirement": "Installer and script logs should be generated and stored in a consistent predefined location for troubleshooting.",
+      "source": {
+        "section": "Local Testing & Validation / Log file review & return codes",
+        "paragraphs": [873, 879, 885]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 14,
+      "evidence_sources": ["local_test_evidence", "installer_logs", "package_configuration"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Logs are generated and stored in the expected location.",
+        "partial": "Logs are generated but location or naming is inconsistent.",
+        "fail": "No installation logs are generated."
+      },
+      "remediation": "Add logging parameters and standardize log output location."
+    },
+    {
+      "id": "TST-RC-001",
+      "domain": "testing",
+      "phase": "local_validation",
+      "title": "Return codes are meaningful and tested",
+      "requirement": "Return codes must be documented, tested and correctly surfaced in logs. Custom scripts must define meaningful return codes.",
+      "source": {
+        "section": "Local Testing & Validation / Log file review & return codes",
+        "paragraphs": [889, 894, 896, 898]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 14,
+      "evidence_sources": ["local_test_evidence", "installer_logs", "script_review"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Return codes are documented, tested and visible in logs.",
+        "partial": "Return codes are visible but not fully documented.",
+        "fail": "Return code behavior is unknown or inconsistent."
+      },
+      "remediation": "Document return code mapping and update script exit behavior."
+    },
+    {
+      "id": "TST-BLOCK-001",
+      "domain": "testing",
+      "phase": "local_validation",
+      "title": "Failed validation blocks progression",
+      "requirement": "If one or more validation points are not met, the package must be reviewed before proceeding.",
+      "source": {
+        "section": "Local Testing & Validation / Installation Test",
+        "paragraphs": [842]
+      },
+      "control_type": "manual",
+      "severity": "critical",
+      "weight_within_domain": 14,
+      "evidence_sources": ["local_test_evidence", "packaging_review"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "All blocking validation findings are resolved before upload.",
+        "partial": "Open issues exist with accepted remediation plan.",
+        "fail": "Package proceeds despite failed validation."
+      },
+      "remediation": "Stop progression and correct install command, arguments or JSON content."
+    },
+    {
+      "id": "TST-INTUNEWIN-001",
+      "domain": "testing",
+      "phase": "local_validation",
+      "title": "IntuneWin is created only after successful local validation",
+      "requirement": "The IntuneWin file must be created only after local package validation is successful.",
+      "source": {
+        "section": "Local Testing & Validation / IntuneWinApp Preparation",
+        "paragraphs": [917]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 10,
+      "evidence_sources": ["package_repository", "local_test_evidence", "packaging_documentation"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "IntuneWin creation follows successful local validation.",
+        "partial": "Sequence is plausible but not evidenced.",
+        "fail": "IntuneWin is produced without validation evidence."
+      },
+      "remediation": "Record validation evidence before creating or publishing the IntuneWin package."
+    },
+    {
+      "id": "INT-NAME-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Local app naming convention is followed",
+      "requirement": "Local apps must use the naming format XX - YYY - UEM - App - CORP - WIN - {AppName}.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1021]
+      },
+      "control_type": "automatic",
+      "severity": "high",
+      "weight_within_domain": 6,
+      "evidence_sources": ["intune_all_apps", "graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix"],
+      "evaluation": {
+        "pass": "Name matches the local app naming convention.",
+        "partial": "Name mostly follows convention but has minor deviations.",
+        "fail": "Name does not follow the local app naming convention."
+      },
+      "automation_hint": {
+        "rule_type": "regex",
+        "pattern_candidate": "^[A-Z]{2} - [A-Z0-9]{2,} - UEM - App - CORP - WIN - .+"
+      },
+      "remediation": "Rename the application according to the approved convention."
+    },
+    {
+      "id": "INT-NAME-002",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Company Portal app naming convention is followed",
+      "requirement": "Apps published to the Company Portal must use {AppName} - XX - YYY.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1022]
+      },
+      "control_type": "automatic",
+      "severity": "medium",
+      "weight_within_domain": 5,
+      "evidence_sources": ["intune_all_apps", "graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Company Portal naming convention is followed.",
+        "partial": "Name includes country/business unit but format is inconsistent.",
+        "fail": "Company Portal naming convention is not followed."
+      },
+      "remediation": "Rename the published app using the Company Portal naming standard."
+    },
+    {
+      "id": "INT-PUB-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Publisher uses official publisher name",
+      "requirement": "The Intune Publisher field must use the official publisher name.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1040]
+      },
+      "control_type": "automatic",
+      "severity": "medium",
+      "weight_within_domain": 5,
+      "evidence_sources": ["intune_all_apps", "graph_mobile_apps", "vendor_documentation"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Publisher is populated with an official publisher name.",
+        "partial": "Publisher is populated but naming is inconsistent.",
+        "fail": "Publisher is missing or non-standard."
+      },
+      "remediation": "Update Publisher using the official vendor name."
+    },
+    {
+      "id": "INT-VER-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Application version matches editor version",
+      "requirement": "The App Version field must be entered exactly as provided by the editor.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1002]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 6,
+      "evidence_sources": ["intune_all_apps", "graph_mobile_apps", "vendor_documentation", "package_repository"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Version is populated and matches source package/vendor version.",
+        "partial": "Version is populated but cannot be reconciled with source evidence.",
+        "fail": "Version is missing, generic or incorrect."
+      },
+      "remediation": "Update App Version using the editor-provided version."
+    },
+    {
+      "id": "INT-CAT-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Application category is filled when possible",
+      "requirement": "The Intune Category field should be filled when possible.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1053, 1055]
+      },
+      "control_type": "automatic",
+      "severity": "low",
+      "weight_within_domain": 3,
+      "evidence_sources": ["intune_all_apps", "graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Category is populated.",
+        "partial": "Category is missing but app is not end-user visible.",
+        "fail": "Category is missing for an app where it should be populated."
+      },
+      "remediation": "Set an approved Intune category such as Productivity or Security."
+    },
+    {
+      "id": "INT-FEATURED-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Featured app is disabled unless requested",
+      "requirement": "Show this as a featured app in the Company Portal must be set to No unless explicitly requested.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1063]
+      },
+      "control_type": "automatic",
+      "severity": "low",
+      "weight_within_domain": 3,
+      "evidence_sources": ["graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Featured app is No or exception is documented.",
+        "partial": "Featured app is Yes but request evidence is unclear.",
+        "fail": "Featured app is Yes without documented request."
+      },
+      "remediation": "Set featured app to No or attach an approved exception."
+    },
+    {
+      "id": "INT-URL-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Information URL uses official publisher website",
+      "requirement": "The Information URL should preferably use the official website of the software publisher.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1071]
+      },
+      "control_type": "semi_automatic",
+      "severity": "low",
+      "weight_within_domain": 3,
+      "evidence_sources": ["graph_mobile_apps", "vendor_documentation"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Information URL is official or not applicable.",
+        "partial": "Information URL is present but official status is not confirmed.",
+        "fail": "Information URL is missing or non-official."
+      },
+      "remediation": "Update Information URL with the official publisher page."
+    },
+    {
+      "id": "INT-URL-002",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Privacy URL uses official publisher policy",
+      "requirement": "The Privacy URL should use the official privacy policy link of the publisher.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1079]
+      },
+      "control_type": "semi_automatic",
+      "severity": "low",
+      "weight_within_domain": 3,
+      "evidence_sources": ["graph_mobile_apps", "vendor_documentation"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Privacy URL points to official privacy policy or is not applicable.",
+        "partial": "Privacy URL exists but official status is not confirmed.",
+        "fail": "Privacy URL is missing or non-official."
+      },
+      "remediation": "Update Privacy URL with official publisher privacy policy."
+    },
+    {
+      "id": "INT-OWN-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Owner follows global or local ownership convention",
+      "requirement": "Global apps must use GLB - UEM as owner. Local apps must use the local entity code such as FR - UEM or UK - UEM.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1087, 1091, 1092]
+      },
+      "control_type": "automatic",
+      "severity": "high",
+      "weight_within_domain": 7,
+      "evidence_sources": ["intune_all_apps", "graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Owner is populated and follows convention.",
+        "partial": "Owner is populated but convention is inconsistent.",
+        "fail": "Owner is missing or not usable."
+      },
+      "remediation": "Update Owner according to global or local ownership convention."
+    },
+    {
+      "id": "INT-LOGO-001",
+      "domain": "intune_setup",
+      "phase": "intune_metadata",
+      "title": "Application logo follows size and format guidance",
+      "requirement": "Application logo should be a square image of at least 256x256 pixels in PNG or JPG format and should use the official logo when available.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / App Information",
+        "paragraphs": [1113, 1117]
+      },
+      "control_type": "manual",
+      "severity": "low",
+      "weight_within_domain": 2,
+      "evidence_sources": ["graph_mobile_apps", "intune_portal_review"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Logo meets format and official branding guidance.",
+        "partial": "Logo exists but size or source is unclear.",
+        "fail": "Logo is missing, poor quality or non-official."
+      },
+      "remediation": "Upload an official square PNG or JPG logo."
+    },
+    {
+      "id": "INT-CMD-001",
+      "domain": "intune_setup",
+      "phase": "program",
+      "title": "64-bit PowerShell execution is enforced",
+      "requirement": "Program commands should use SysNative to ensure the 64-bit version of PowerShell is used.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Program",
+        "paragraphs": [1121, 1129]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 5,
+      "evidence_sources": ["graph_mobile_apps", "install_command", "uninstall_command"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Install/uninstall commands enforce 64-bit PowerShell where applicable.",
+        "partial": "Commands appear valid but PowerShell bitness is unclear.",
+        "fail": "PowerShell command can run in unintended 32-bit context."
+      },
+      "remediation": "Update commands to call PowerShell through SysNative where applicable."
+    },
+    {
+      "id": "INT-TIMEOUT-001",
+      "domain": "intune_setup",
+      "phase": "program",
+      "title": "Installation timeout defaults to 60 minutes unless justified",
+      "requirement": "Installation timeout should generally remain at 60 minutes unless a specific need exists.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Program",
+        "paragraphs": [1142, 1146]
+      },
+      "control_type": "automatic",
+      "severity": "low",
+      "weight_within_domain": 2,
+      "evidence_sources": ["graph_mobile_apps"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Timeout is 60 minutes or exception is documented.",
+        "partial": "Timeout differs but package type may justify it.",
+        "fail": "Timeout differs significantly without justification."
+      },
+      "remediation": "Reset timeout to 60 minutes or document the exception."
+    },
+    {
+      "id": "INT-UNINSTALL-001",
+      "domain": "intune_setup",
+      "phase": "program",
+      "title": "User uninstall is disabled for mandatory or security apps",
+      "requirement": "For mandatory apps, especially security-related software or apps deployed as required, user uninstall should be set to No unless justified.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Program",
+        "paragraphs": [1154, 1157]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 5,
+      "evidence_sources": ["graph_mobile_apps", "graph_assignments", "security_classification"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "User uninstall setting is aligned with deployment criticality.",
+        "partial": "User uninstall is enabled but exception may exist.",
+        "fail": "Required or security app allows user uninstall without justification."
+      },
+      "remediation": "Set user uninstall to No or document approved business exception."
+    },
+    {
+      "id": "INT-BEHAVIOR-001",
+      "domain": "intune_setup",
+      "phase": "program",
+      "title": "Install behavior uses system context by default",
+      "requirement": "System context is preferred for most apps, especially when writing to protected areas or installing for all users. User-context exceptions must be justified and tested.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Program",
+        "paragraphs": [1167, 1170]
+      },
+      "control_type": "automatic",
+      "severity": "high",
+      "weight_within_domain": 5,
+      "evidence_sources": ["graph_mobile_apps", "local_test_evidence"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Install behavior is system or exception is justified and tested.",
+        "partial": "User context is used but validation is incomplete.",
+        "fail": "User context is used with no justification."
+      },
+      "remediation": "Switch to system context or document and test the exception."
+    },
+    {
+      "id": "INT-RESTART-001",
+      "domain": "intune_setup",
+      "phase": "program",
+      "title": "Restart behavior avoids forced reboot by default",
+      "requirement": "Restart behavior should default to No specific action. Forced restart options should only be used when required and validated during testing.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Program",
+        "paragraphs": [1180, 1182, 1183, 1185, 1186]
+      },
+      "control_type": "automatic",
+      "severity": "medium",
+      "weight_within_domain": 4,
+      "evidence_sources": ["graph_mobile_apps", "local_test_evidence"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Restart behavior is No specific action or justified.",
+        "partial": "Restart behavior differs but technical need is plausible.",
+        "fail": "Forced restart is configured without justification."
+      },
+      "remediation": "Set restart behavior to No specific action or document tested requirement."
+    },
+    {
+      "id": "INT-RC-001",
+      "domain": "intune_setup",
+      "phase": "program",
+      "title": "Standard success and reboot return codes are configured",
+      "requirement": "Standard Windows MSI success and reboot codes, at least 0 and 3010, must be included and ambiguous return codes avoided.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Program",
+        "paragraphs": [1198, 1203, 1205, 1209]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 5,
+      "evidence_sources": ["graph_mobile_apps", "return_code_configuration"],
+      "applicability": ["win32", "msi"],
+      "evaluation": {
+        "pass": "Return codes include 0 and 3010 and avoid ambiguity.",
+        "partial": "Return code configuration is present but incomplete.",
+        "fail": "Return code mapping is missing or ambiguous."
+      },
+      "remediation": "Update Intune return code mapping with standard success and reboot codes."
+    },
+    {
+      "id": "INT-REQ-001",
+      "domain": "intune_setup",
+      "phase": "requirements",
+      "title": "Architecture requirement is set appropriately",
+      "requirement": "For most modern applications, 64-bit only should be selected to avoid compatibility issues.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Requirements",
+        "paragraphs": [1229, 1233]
+      },
+      "control_type": "automatic",
+      "severity": "medium",
+      "weight_within_domain": 4,
+      "evidence_sources": ["graph_mobile_apps"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Architecture requirement is aligned with the application and fleet.",
+        "partial": "Architecture requirement is broad but justified by compatibility.",
+        "fail": "Architecture requirement is missing or inconsistent."
+      },
+      "remediation": "Configure architecture requirement or document the exception."
+    },
+    {
+      "id": "INT-REQ-002",
+      "domain": "intune_setup",
+      "phase": "requirements",
+      "title": "Minimum OS version excludes unsupported versions",
+      "requirement": "Only Microsoft-supported OS versions should be selected unless an ESU agreement exists.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Requirements",
+        "paragraphs": [1246, 1247, 1248]
+      },
+      "control_type": "automatic",
+      "severity": "high",
+      "weight_within_domain": 5,
+      "evidence_sources": ["graph_mobile_apps", "uem_supported_os_matrix"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Minimum OS version is aligned with supported OS matrix.",
+        "partial": "Minimum OS is broad but exception evidence may exist.",
+        "fail": "Unsupported OS versions are eligible without ESU evidence."
+      },
+      "remediation": "Update minimum OS requirements according to UEM supported OS matrix."
+    },
+    {
+      "id": "INT-REQ-003",
+      "domain": "intune_setup",
+      "phase": "requirements",
+      "title": "Hardware requirements remain empty unless needed",
+      "requirement": "Disk space, memory, logical processors and CPU speed requirements should remain empty unless a specific technical requirement exists.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Requirements",
+        "paragraphs": [1275]
+      },
+      "control_type": "automatic",
+      "severity": "low",
+      "weight_within_domain": 2,
+      "evidence_sources": ["graph_mobile_apps"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Hardware requirements are empty or justified.",
+        "partial": "Hardware requirements are configured but may be technically justified.",
+        "fail": "Unnecessary hardware requirements may block valid devices."
+      },
+      "remediation": "Remove unnecessary hardware requirements or document technical need."
+    },
+    {
+      "id": "INT-DET-001",
+      "domain": "intune_setup",
+      "phase": "detection",
+      "title": "Detection rules use reliable installed-state indicators",
+      "requirement": "Detection rules must always be configured with reliable indicators confirming that the application is truly installed.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Detection Rules",
+        "paragraphs": [1285, 1287, 1309]
+      },
+      "control_type": "semi_automatic",
+      "severity": "critical",
+      "weight_within_domain": 7,
+      "evidence_sources": ["graph_detection_rules", "package_configuration"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Detection uses reliable installed-state indicator.",
+        "partial": "Detection exists but reliability is unclear.",
+        "fail": "Detection is missing, generic or unreliable."
+      },
+      "remediation": "Update detection rule using MSI product code, registry, file version or validated script."
+    },
+    {
+      "id": "INT-DET-002",
+      "domain": "intune_setup",
+      "phase": "detection",
+      "title": "Detection scripts return correct exit codes",
+      "requirement": "Detection scripts must return exit 0 when detected and non-zero when not detected.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Detection Rules",
+        "paragraphs": [1299]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 5,
+      "evidence_sources": ["script_review", "local_test_evidence", "graph_detection_rules"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Detection script exit behavior is tested and correct.",
+        "partial": "Exit behavior is documented but not tested.",
+        "fail": "Detection script exit behavior is missing or incorrect."
+      },
+      "remediation": "Correct detection script exit code behavior and retest."
+    },
+    {
+      "id": "INT-DET-003",
+      "domain": "intune_setup",
+      "phase": "detection",
+      "title": "Detection logic is system-context safe",
+      "requirement": "Detection scripts run in SYSTEM context and must avoid user-specific locations unless explicitly targeting a user scenario.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Detection Rules",
+        "paragraphs": [1301]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 4,
+      "evidence_sources": ["script_review", "graph_detection_rules"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Detection logic is safe for SYSTEM context.",
+        "partial": "User-specific paths exist but scenario may justify them.",
+        "fail": "Detection relies on inappropriate user-specific context."
+      },
+      "remediation": "Use machine-level registry, file paths or validated user-targeted logic."
+    },
+    {
+      "id": "INT-DET-004",
+      "domain": "intune_setup",
+      "phase": "detection",
+      "title": "Detection logic is specific enough",
+      "requirement": "Detection logic must be simple, fast, reliable and specific enough; when versions can coexist, the rule should verify version.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Detection Rules",
+        "paragraphs": [1303, 1305, 1307]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 5,
+      "evidence_sources": ["graph_detection_rules", "package_configuration", "local_test_evidence"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Detection is specific, fast and version-aware when needed.",
+        "partial": "Detection is specific but version handling is unclear.",
+        "fail": "Detection is too broad and may cause false positives."
+      },
+      "remediation": "Add version-aware or product-specific detection logic."
+    },
+    {
+      "id": "INT-DEP-001",
+      "domain": "intune_setup",
+      "phase": "dependencies",
+      "title": "Dependencies are defined only when needed",
+      "requirement": "Dependencies should be defined when required components must be installed before the main application.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Dependencies",
+        "paragraphs": [1334, 1336]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 3,
+      "evidence_sources": ["graph_dependencies", "packaging_documentation"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Dependencies are justified or explicitly not needed.",
+        "partial": "Dependencies exist but rationale is incomplete.",
+        "fail": "Required dependencies are missing or unnecessary dependencies are configured."
+      },
+      "remediation": "Add required dependencies or remove unjustified ones."
+    },
+    {
+      "id": "INT-DEP-002",
+      "domain": "intune_setup",
+      "phase": "dependencies",
+      "title": "Dependency chains are short maintained and tested",
+      "requirement": "Dependencies must be required, installed before the main app, up to date, and ideally limited to one or two levels.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Dependencies",
+        "paragraphs": [1337, 1344, 1346, 1348, 1350]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 4,
+      "evidence_sources": ["graph_dependencies", "pilot_test_evidence", "application_catalog"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Dependencies are short, maintained and tested.",
+        "partial": "Dependencies exist but maintenance or pilot evidence is incomplete.",
+        "fail": "Long, stale or untested dependency chain exists."
+      },
+      "remediation": "Reduce dependency chain and validate during pilot."
+    },
+    {
+      "id": "INT-DEP-003",
+      "domain": "intune_setup",
+      "phase": "dependencies",
+      "title": "Dependencies are not used for simple ordering logic",
+      "requirement": "Dependencies must not be used for simple ordering logic; script sequencing should be preferred when possible.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Dependencies",
+        "paragraphs": [1352]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 2,
+      "evidence_sources": ["graph_dependencies", "script_review", "packaging_documentation"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Dependencies are used for true prerequisites only.",
+        "partial": "Ordering rationale is unclear.",
+        "fail": "Dependencies are used only for sequencing."
+      },
+      "remediation": "Move simple ordering logic into the installation script."
+    },
+    {
+      "id": "INT-SUP-001",
+      "domain": "intune_setup",
+      "phase": "supersedence",
+      "title": "Supersedence is not relied on for critical global upgrades",
+      "requirement": "Supersedence should generally not be relied on for business-critical or global apps; version upgrades should preferably be handled directly within the package script.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Supersedence",
+        "paragraphs": [1369, 1371, 1373, 1375, 1377]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 4,
+      "evidence_sources": ["graph_supersedence", "package_configuration", "packaging_documentation"],
+      "applicability": ["win32"],
+      "evaluation": {
+        "pass": "Upgrade model is script-controlled or supersedence use is justified.",
+        "partial": "Supersedence exists but criticality is unclear.",
+        "fail": "Critical/global app relies on supersedence without justification."
+      },
+      "remediation": "Document supersedence rationale or move upgrade control into the package script."
+    },
+    {
+      "id": "INT-REVIEW-001",
+      "domain": "intune_setup",
+      "phase": "review_save",
+      "title": "Final Intune review is completed before save",
+      "requirement": "Before saving, required fields, commands, detection rules, scope tags, restrictions and metadata must be double-checked.",
+      "source": {
+        "section": "Intune Win32 App Setup and Packaging / Review and Save",
+        "paragraphs": [1390, 1392, 1394, 1396]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 4,
+      "evidence_sources": ["packaging_review", "intune_portal_review", "graph_mobile_apps"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Final review checklist is complete.",
+        "partial": "Review is informal or not fully evidenced.",
+        "fail": "No final review evidence exists."
+      },
+      "remediation": "Complete final Intune review checklist before production assignment."
+    },
+    {
+      "id": "DEP-WAVE-001",
+      "domain": "deployment",
+      "phase": "deployment_strategy",
+      "title": "Wave-based rollout strategy is used",
+      "requirement": "Applications should follow a safe progressive wave-based deployment strategy for both required and available apps.",
+      "source": {
+        "section": "Application Deployment Strategy / Deployment Waves Overview",
+        "paragraphs": [1406, 1431, 1435]
+      },
+      "control_type": "semi_automatic",
+      "severity": "high",
+      "weight_within_domain": 24,
+      "evidence_sources": ["graph_assignments", "deployment_plan", "pilot_test_evidence"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Pilot and production waves are visible or documented.",
+        "partial": "Wave approach exists but is incomplete.",
+        "fail": "Application is deployed broadly with no wave evidence."
+      },
+      "remediation": "Create or document pilot and production assignment waves."
+    },
+    {
+      "id": "DEP-PILOT-001",
+      "domain": "deployment",
+      "phase": "deployment_strategy",
+      "title": "Pilot validation precedes global production",
+      "requirement": "Global production deployment should occur only after pilot waves are validated.",
+      "source": {
+        "section": "Application Deployment Strategy / Deployment Waves Overview",
+        "paragraphs": [1431]
+      },
+      "control_type": "manual",
+      "severity": "high",
+      "weight_within_domain": 20,
+      "evidence_sources": ["pilot_test_evidence", "deployment_plan", "install_status_export"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Pilot validation evidence exists before global production assignment.",
+        "partial": "Pilot validation exists but acceptance criteria are unclear.",
+        "fail": "Global production deployment occurs without pilot validation."
+      },
+      "remediation": "Run pilot and capture validation before global rollout."
+    },
+    {
+      "id": "DEP-PILOT-002",
+      "domain": "deployment",
+      "phase": "deployment_strategy",
+      "title": "Single pilot fast path is justified",
+      "requirement": "A single pilot and immediate production rollout are acceptable only for simple situations where the required scope supports that choice.",
+      "source": {
+        "section": "Application Deployment Strategy / Deployment Waves Overview",
+        "paragraphs": [1441]
+      },
+      "control_type": "manual",
+      "severity": "medium",
+      "weight_within_domain": 12,
+      "evidence_sources": ["deployment_plan", "pilot_test_evidence", "business_approval"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Single pilot fast path is justified.",
+        "partial": "Fast path appears reasonable but approval is unclear.",
+        "fail": "Fast path is used with no justification."
+      },
+      "remediation": "Document why single pilot is sufficient or switch to standard waves."
+    },
+    {
+      "id": "DEP-TARGET-001",
+      "domain": "deployment",
+      "phase": "targeting",
+      "title": "Device targeting is preferred",
+      "requirement": "Applications should preferably be assigned to devices, not users, unless a specific scenario requires user-based targeting.",
+      "source": {
+        "section": "Application Deployment Strategy / Targeting Scope and Assignment Rules",
+        "paragraphs": [1456, 1458]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 18,
+      "evidence_sources": ["graph_assignments", "assignment_review"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Assignments are device-based or user-based exception is justified.",
+        "partial": "User-based assignment exists but rationale is unclear.",
+        "fail": "User-based targeting is used without justification."
+      },
+      "remediation": "Move assignment to device groups or document user-based targeting rationale."
+    },
+    {
+      "id": "DEP-GROUP-001",
+      "domain": "deployment",
+      "phase": "targeting",
+      "title": "Deployment groups follow wave logic and naming conventions",
+      "requirement": "Required and available assignments must use the same wave logic and naming conventions.",
+      "source": {
+        "section": "Application Deployment Strategy / Targeting Scope and Assignment Rules",
+        "paragraphs": [1456]
+      },
+      "control_type": "semi_automatic",
+      "severity": "medium",
+      "weight_within_domain": 14,
+      "evidence_sources": ["graph_assignments", "entra_groups_export"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Assignment groups follow approved naming and wave logic.",
+        "partial": "Some assignment groups are non-standard but explainable.",
+        "fail": "Assignment group naming or wave logic is inconsistent."
+      },
+      "remediation": "Normalize assignment group names and document wave mapping."
+    },
+    {
+      "id": "DEP-COM-001",
+      "domain": "deployment",
+      "phase": "communication",
+      "title": "Teams communication is followed by email",
+      "requirement": "Teams communication must always be followed by an email with the same content to ensure visibility.",
+      "source": {
+        "section": "Communication Plan",
+        "paragraphs": [1459, 1477]
+      },
+      "control_type": "manual",
+      "severity": "low",
+      "weight_within_domain": 12,
+      "evidence_sources": ["communication_record", "email_record", "teams_post"],
+      "applicability": ["win32", "msi", "msix", "store"],
+      "evaluation": {
+        "pass": "Teams and email communication evidence exists.",
+        "partial": "Only one communication channel is evidenced.",
+        "fail": "No communication evidence exists."
+      },
+      "remediation": "Send or archive the required email communication."
+    }
+  ]
+}

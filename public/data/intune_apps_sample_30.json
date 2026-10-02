@@ -1,0 +1,4131 @@
+{
+  "extractedAt": "2026-09-21T13:33:19.0081300Z",
+  "tenantId": "a289d6c2-3b1f-4bc4-8fa0-6866ff300052",
+  "account": "_Arnaud.Lorcestales.ext.AZ@sodexo.com",
+  "clientId": "f562fe3a-6ee6-4eaa-8e61-71daf4a47ac9",
+  "requestedTop": 30,
+  "returnedApps": 30,
+  "resolvedGroups": 53,
+  "graphBase": "https://graph.microsoft.com/v1.0/deviceAppManagement/mobileApps",
+  "groups": {
+    "4d157d4b-2c9e-46f4-9004-0001a271a341": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "4d157d4b-2c9e-46f4-9004-0001a271a341",
+      "displayName": "SG.AZ.US.OSS-UEM-W11-EUCS_Testing",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "7c06e55d-4c72-4d98-920d-3ea79833980c": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "7c06e55d-4c72-4d98-920d-3ea79833980c",
+      "displayName": "SG.AZ.DE.OSS-UEM-Windows",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "1d4dcfc3-0554-4e48-9052-09a918c7f3bb": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "1d4dcfc3-0554-4e48-9052-09a918c7f3bb",
+      "displayName": "SG.AZ.BR.OSS-UEM-W10",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "4cf25c1b-018a-4bc5-99ad-a916ac0ca7ec": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "4cf25c1b-018a-4bc5-99ad-a916ac0ca7ec",
+      "displayName": "SG.AZ.GLB-VDIDAIMS- UEM-DEV-DevicesGroups",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "b7efed4d-78fe-4838-a24b-aafbe5928576": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "b7efed4d-78fe-4838-a24b-aafbe5928576",
+      "displayName": "SG.AZ.GLB-VDILUX-UEM-PRD-DevicesGroups",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "67968c5d-a0b5-4850-96d4-445ef369b995": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "67968c5d-a0b5-4850-96d4-445ef369b995",
+      "displayName": "SG.AZ.BR.OSS-UEM-W10-POSOnly",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "dc1264d0-9a07-49ff-b1ab-dd6d191a339a": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "dc1264d0-9a07-49ff-b1ab-dd6d191a339a",
+      "displayName": "SG.CE.BE.OSS-UEM-Users",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "23902db2-ee71-4c7f-a0f7-552950a1e8f3": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "23902db2-ee71-4c7f-a0f7-552950a1e8f3",
+      "displayName": "SG.AZ.FR.GCP-UEM-WIN-Cleanup7Zip",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "5523f382-ffd0-4f05-9eba-0ed652271394": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "5523f382-ffd0-4f05-9eba-0ed652271394",
+      "displayName": "SG.AZ.GLB-VDIDAIMS- UEM-PRD-DevicesGroups",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "091e3769-d4a7-4eb5-9290-571e2808c2ce": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "091e3769-d4a7-4eb5-9290-571e2808c2ce",
+      "displayName": "SG.AZ.SE.OSS-UEM-Windows",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "e8d3e243-c68a-4330-8d2d-5faa104ca6c0": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "e8d3e243-c68a-4330-8d2d-5faa104ca6c0",
+      "displayName": "SG.AZ.GLB-GCCC-UEM-WIN-VDI-PRD-SSKP",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "db7ac666-708a-4074-ba34-42e7c22f9009": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "db7ac666-708a-4074-ba34-42e7c22f9009",
+      "displayName": "SG.AZ.GLB-UEM-Windows",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "55222ef2-1b0a-405d-907b-d6695c0195b7": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "55222ef2-1b0a-405d-907b-d6695c0195b7",
+      "displayName": "SG.NA.GLB-UEM-KeyUsers",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "5c4f6ed7-d5b4-43b2-9982-3c3f5930f1b6": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "5c4f6ed7-d5b4-43b2-9982-3c3f5930f1b6",
+      "displayName": "SG.AZ.GLB-VDI-INTEU-PRD-UEM-Devices",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "744de108-85a0-4d43-8cec-3cd916359daf": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "744de108-85a0-4d43-8cec-3cd916359daf",
+      "displayName": "SG.AZ.US.OSS-UEM-WIN-Image",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "2af6de54-0e08-4672-9b92-9a0c8f0ce825": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "2af6de54-0e08-4672-9b92-9a0c8f0ce825",
+      "displayName": "SG.AZ.GLB-VDIBNL-UEM-DEV-DevicesGroups",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "e6101828-7a7a-4454-8191-e8a5c5f446b6": {
+      "id": "e6101828-7a7a-4454-8191-e8a5c5f446b6",
+      "displayName": null,
+      "lookupError": "Response status code does not indicate success: NotFound (Not Found)."
+    },
+    "0e00c996-2943-4289-bb59-c7958c177e06": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "0e00c996-2943-4289-bb59-c7958c177e06",
+      "displayName": "SG.AZ.GLB-GCCC-UEM-WIN-DIMD",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "81f339ec-388f-4d96-b6f1-afe0472ea535": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "81f339ec-388f-4d96-b6f1-afe0472ea535",
+      "displayName": "SG.AZ.GLB-VDIDAISS- UEM-DEV-DevicesGroups",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "7712b43f-7770-4ddd-995f-4868c7456493": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "7712b43f-7770-4ddd-995f-4868c7456493",
+      "displayName": "SG.CE.BE.OSS-UEM-Korian",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "478de6f1-7459-4234-98da-140b6b452d4d": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "478de6f1-7459-4234-98da-140b6b452d4d",
+      "displayName": "SG.AZ.BR.OSS-UEM-W10-SharedDevices",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "ab52ae21-23a4-41b8-9b38-0da931041679": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "ab52ae21-23a4-41b8-9b38-0da931041679",
+      "displayName": "SG.AZ.BR.OSS-UEM-Windows",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "745a6c36-68b0-4624-ba7c-9074f1c83ab7": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "745a6c36-68b0-4624-ba7c-9074f1c83ab7",
+      "displayName": "SG.AZ.BR.OSS-UEM-WIN-AutoPilot-PreProvisioning",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "bc1b3539-2a50-4b26-a1ba-53a25c6cda6e": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "bc1b3539-2a50-4b26-a1ba-53a25c6cda6e",
+      "displayName": "SG.AZ.GLB-VDIBNL-UEM-PRD-DevicesGroups",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "e9b7eeff-eb8b-4418-9dea-de3138c8b309": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "e9b7eeff-eb8b-4418-9dea-de3138c8b309",
+      "displayName": "SG.AZ.GLB-GCCC-UEM-WIN-VDI-PRD-DITZ ",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "6fccb715-5706-43bb-9703-8b8b619d845e": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "6fccb715-5706-43bb-9703-8b8b619d845e",
+      "displayName": "SG.CE.MY.OSS-UEM-KeyUsers",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "c418db76-7416-452a-a8d6-f0a39a399a96": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "c418db76-7416-452a-a8d6-f0a39a399a96",
+      "displayName": "SG.AZ.GLB-VDI-VDIGDCS-PRD-UEM-Devices",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "d74f0389-7f8e-4439-b6cc-ef65dc4a4471": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "d74f0389-7f8e-4439-b6cc-ef65dc4a4471",
+      "displayName": "SG.CE.BE.OSS-UEM-ServiceDesk",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "f2fba7fd-f7e0-4aa6-990e-6bcde9aa3e26": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "f2fba7fd-f7e0-4aa6-990e-6bcde9aa3e26",
+      "displayName": "SG.AZ.GLB-GCCC-UEM-WIN-VDI-PRD-DSMD",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "4ae2a725-c99b-4cd8-97c4-82cb742254dc": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "4ae2a725-c99b-4cd8-97c4-82cb742254dc",
+      "displayName": "SG.AZ.HK.OSS-UEM-Windows",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "0d855c35-55ba-4320-9103-334d4c289db5": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "0d855c35-55ba-4320-9103-334d4c289db5",
+      "displayName": "SG.AZ.GLB-VDI-GSD-PRD-UEM-Devices",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "731b1228-1115-49bc-bdf9-1cd3cc346e8e": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "731b1228-1115-49bc-bdf9-1cd3cc346e8e",
+      "displayName": "SG.AZ.BR.OSS-UEM-W11-POSCatracas",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "5e93a6f8-7d98-4c4f-b1e0-cb34162ad072": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "5e93a6f8-7d98-4c4f-b1e0-cb34162ad072",
+      "displayName": "SG.AZ.GLB-VDI-GDP-TST-UEM-Devices",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "2a0777df-c443-48dd-a7ad-735c0b7de064": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "2a0777df-c443-48dd-a7ad-735c0b7de064",
+      "displayName": "SG.AZ.BR.OSS-UEM-7-zip-Correction",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "c26a9e66-777d-4c88-a50d-83d4b9d41353": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "c26a9e66-777d-4c88-a50d-83d4b9d41353",
+      "displayName": "SG.CE.SG.OSS-UEM-KeyUsers",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "382b8682-dc34-4978-acf9-e2a1d17b533e": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "382b8682-dc34-4978-acf9-e2a1d17b533e",
+      "displayName": "SG.NA.GLB-UEM-Users",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "dace4f00-5345-48a7-9992-9090783af53b": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "dace4f00-5345-48a7-9992-9090783af53b",
+      "displayName": "SG.AZ.GLB-VDI-DOK-DEV-UEM-Devices",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "13bfd531-a9eb-4d28-b925-30200f897ffa": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "13bfd531-a9eb-4d28-b925-30200f897ffa",
+      "displayName": "SG.CE.GLB-UEM-KeyUsers",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "5341c734-7dc0-4030-8253-6c793c3ef558": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "5341c734-7dc0-4030-8253-6c793c3ef558",
+      "displayName": "SG.CE.GLB-UEM-Users",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "761cf0a7-2835-48eb-ba35-28c58c84fc11": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "761cf0a7-2835-48eb-ba35-28c58c84fc11",
+      "displayName": "SG.CE.NL.OSS-UEM-Users_Sites",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "9b68ecc5-8904-4266-af44-ff9b60ddf53a": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "9b68ecc5-8904-4266-af44-ff9b60ddf53a",
+      "displayName": "SG.AZ.US.OSS-UEM-WIN-Netskope-Test",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "69051a2e-76c4-4a45-b6bf-a2d23d555849": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "69051a2e-76c4-4a45-b6bf-a2d23d555849",
+      "displayName": "SG.AZ.US.OSS-UEM-iOS-SharedDevices-ParkviewValet",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "6770b096-e1fd-4d1f-a9f2-e0e08ed6ce45": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "6770b096-e1fd-4d1f-a9f2-e0e08ed6ce45",
+      "displayName": "SG.AZ.FI.OSS-UEM-Windows",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "244abeb1-ca1e-4a67-8a02-ce6e10f5dd1a": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "244abeb1-ca1e-4a67-8a02-ce6e10f5dd1a",
+      "displayName": "SG.AZ.GLB-VDILUX-UEM-DEV-DevicesGroups",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "ed0740dd-ac03-404f-8ebf-9a549ffb2b73": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "ed0740dd-ac03-404f-8ebf-9a549ffb2b73",
+      "displayName": "SG.AZ.BR.OSS-UEM-W11",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "d48c72e1-bfd4-421b-b152-4c1209a42402": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "d48c72e1-bfd4-421b-b152-4c1209a42402",
+      "displayName": "SG.AZ.CN.OSS-UEM-Windows",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "4173372f-8b5f-460c-9a54-68620a9ec80c": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "4173372f-8b5f-460c-9a54-68620a9ec80c",
+      "displayName": "SG.CE.MY.OSS-UEM-Users",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "bb30081f-2510-4782-aa89-2f080d4a1cc6": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "bb30081f-2510-4782-aa89-2f080d4a1cc6",
+      "displayName": "SG.AZ.MY.OSS-UEM-LOCKSCREENTESTING",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "2c1f6897-d219-4350-baad-e7889f96e9be": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "2c1f6897-d219-4350-baad-e7889f96e9be",
+      "displayName": "SG.AZ.GLB-VDI-VDIGDCS-TST-UEM-Devices",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "0db493b7-808e-4e1b-a7c1-f4605880b969": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "0db493b7-808e-4e1b-a7c1-f4605880b969",
+      "displayName": "SG.AZ.US.OSS-UEM-EUCS-NRebolledo-01",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "3316ac58-87b3-496f-aa5e-2022f2af675a": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "3316ac58-87b3-496f-aa5e-2022f2af675a",
+      "displayName": "SG.CE.SG.OSS-UEM-Users",
+      "groupTypes": [],
+      "mailEnabled": false
+    },
+    "130dce03-b0d2-42d3-9586-d2a66cd1f41f": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "130dce03-b0d2-42d3-9586-d2a66cd1f41f",
+      "displayName": "SG.AZ.GLB-VDI-GDP-PRD-UEM-Devices",
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "mailEnabled": false
+    },
+    "820538f1-2f27-4716-8bed-51423e228e2b": {
+      "securityEnabled": true,
+      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups(id,displayName,securityEnabled,mailEnabled,groupTypes)/$entity",
+      "id": "820538f1-2f27-4716-8bed-51423e228e2b",
+      "displayName": "SG.AZ.GB.OSS-UEM-7zip-installation",
+      "groupTypes": [],
+      "mailEnabled": false
+    }
+  },
+  "records": [
+    {
+      "app": {
+        "id": "efa2effc-e67a-4dc5-b119-972cfcb89417",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "allow"
+        },
+        "displayName": ".NET 3.5 - IT",
+        "allowedArchitectures": null,
+        "publisher": "Microsoft",
+        "privacyInformationUrl": "",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "%windir%\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe -Executionpolicy Bypass .\\Install.ps1",
+        "owner": "OSS-IT",
+        "description": ".NET 3.5 - IT",
+        "fileName": "NET_3_5.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "%windir%\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe -Executionpolicy Bypass .\\Uninstall.ps1",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "keyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\.NETFramework\\v3.0",
+            "operationType": "exists",
+            "comparisonValue": "",
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": null
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x64",
+        "size": 544,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "Install.ps1",
+        "lastModifiedDateTime": "2023-05-25T12:33:15Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2023-05-25T12:33:15Z",
+        "informationUrl": null
+      },
+      "assignments": null,
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Other Apps",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "0720a99e-562b-4a77-83f0-9a7523fcf13e"
+      },
+      "categories_error": null,
+      "relationships": [
+        {
+          "targetDisplayVersion": "",
+          "targetPublisherDisplayName": "Chimica",
+          "sourceDisplayVersion": "",
+          "id": "4d0c20b7-3e9a-4f63-9fea-4ffc12beac33_efa2effc-e67a-4dc5-b119-972cfcb89417",
+          "sourceId": "efa2effc-e67a-4dc5-b119-972cfcb89417",
+          "dependencyType": "autoInstall",
+          "targetDisplayName": "NewChimica - IT",
+          "sourceDisplayName": ".NET 3.5 - IT",
+          "dependsOnAppCount": 0,
+          "@odata.type": "#microsoft.graph.mobileAppDependency",
+          "dependentAppCount": 0,
+          "targetType": "parent",
+          "targetId": "4d0c20b7-3e9a-4f63-9fea-4ffc12beac33",
+          "targetPublisher": "Chimica",
+          "sourcePublisherDisplayName": "Microsoft"
+        },
+        {
+          "targetDisplayVersion": "13.0.17.2096",
+          "targetPublisherDisplayName": "SAP",
+          "sourceDisplayVersion": "",
+          "id": "ad33b0cd-6fca-4431-8531-db28fa34a53c_efa2effc-e67a-4dc5-b119-972cfcb89417",
+          "sourceId": "efa2effc-e67a-4dc5-b119-972cfcb89417",
+          "dependencyType": "autoInstall",
+          "targetDisplayName": "SAP Crystal Reports - IT",
+          "sourceDisplayName": ".NET 3.5 - IT",
+          "dependsOnAppCount": 0,
+          "@odata.type": "#microsoft.graph.mobileAppDependency",
+          "dependentAppCount": 0,
+          "targetType": "parent",
+          "targetId": "ad33b0cd-6fca-4431-8531-db28fa34a53c",
+          "targetPublisher": "SAP",
+          "sourcePublisherDisplayName": "Microsoft"
+        }
+      ],
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "c62e20b2-ed9a-49b7-8d1e-344cbbc88b4c",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": 150,
+        "notes": "Application Owner: Deshmukh, Tejashri / Tuscano, Simpson  (GNTS)\nlogos : https://www.netskope.com/fr/company/newsroom/netskope-logos#\nVersion Package : Package V5",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "force"
+        },
+        "displayName": "[DO NOT REMOVE] OLD - Netskope Client (GLB) -2",
+        "allowedArchitectures": null,
+        "publisher": "Netskope",
+        "privacyInformationUrl": "https://www.netskope.com/fr/privacy",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "Windows10_22H2",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy bypass -file GlobalApp-Script.ps1 -Mode \"install\"",
+        "owner": "GLB - UEM",
+        "description": "Netskope, a global cybersecurity leader, is redefining cloud, data, and network security to help organizations apply zero trust principles to protect data. Fast and easy\n\nto use, the Netskope platform provides optimized access and real-time security for people, devices, and data anywhere they go. Netskope helps customers reduce risk, accelerate performance, and get unrivaled visibility into any cloud, web, and private application activity. Thousands of customers, including more than 25 of the Fortune 100, trust Netskope and its powerful NewEdge network to address evolving threats, new risks, technology shifts, organizational and network changes, and new regulatory requirements. Learn how Netskope helps customers be ready for anything on their SASE journey, visit netskope.com.\n\nThe Netskope’s Client for iOS includes CASB, SWG, CFW and NPA features. Netskope Client enables any user connecting from any device or location fast access to their web, cloud, or private apps, and a secure work experience with no trade-offs for unified data and threat protection.\n\nNetskope Client is a fast, lightweight, non-intrusive application that establishes a secure tunnel to steer traffic from the end user's device to the Netskope cloud without demanding massive spends or a heavy bandwidth investment as with legacy technologies.\n\nFor more information, please refer to https://docs.netskope.com/en/traffic-steering.html",
+        "fileName": "Netskope-old.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy ByPass -File GlobalApp-Script.ps1 -Mode \"uninstall\"",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Program Files (x86)\\Netskope\\STAgent",
+            "operationType": "version",
+            "comparisonValue": "126.0.0.2387",
+            "operator": "greaterThanOrEqual",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "stAgentUI.exe"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "none",
+        "size": 27220912,
+        "developer": "GLB - UEM",
+        "committedContentVersion": "3",
+        "setupFilePath": "GlobalApp-Script.ps1",
+        "lastModifiedDateTime": "2025-12-07T21:42:17Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-11-12T21:36:02Z",
+        "informationUrl": "https://docs.netskope.com/en/netskope-help/netskope-client/netskope-client-deployment-options/microsoft-intune/"
+      },
+      "assignments": null,
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Computer Management",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "981deed8-6857-4e78-a50e-c3f61d312737"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "538a9a9e-9821-44a2-8f76-648d8fdbdfef",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "allow"
+        },
+        "displayName": "[MY] Sodexo MY Wallpaper",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo MY wallpaper",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2H20",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "%windir%\\sysnative\\WindowsPowerShell\\v1.0\\powershell -ex bypass -file test_MYwallpaper.ps1",
+        "owner": "MY-APC",
+        "description": "Apply Sodexo MY wallpaper",
+        "fileName": "MYsodexo.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "powershell -ex bypass -file test_MYwallpaper.ps1",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\Web\\Wallpaper\\Windows",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "MYsodexo.jpg"
+          },
+          {
+            "keyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PersonalizationCSP",
+            "operationType": "exists",
+            "comparisonValue": "",
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": "DesktopImagePath"
+          },
+          {
+            "keyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PersonalizationCSP",
+            "operationType": "string",
+            "comparisonValue": "C:\\Windows\\Web\\Wallpaper\\Windows\\MYsodexo.jpg",
+            "operator": "equal",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": "DesktopImagePath"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x64",
+        "size": 98000,
+        "developer": "",
+        "committedContentVersion": "3",
+        "setupFilePath": "test_MYwallpaper.ps1",
+        "lastModifiedDateTime": "2024-02-22T03:45:35Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2024-02-21T07:47:20Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "6fccb715-5706-43bb-9703-8b8b619d845e",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "6fccb715-5706-43bb-9703-8b8b619d845e_0_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4173372f-8b5f-460c-9a54-68620a9ec80c",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4173372f-8b5f-460c-9a54-68620a9ec80c_1_0"
+        },
+        {
+          "intent": "required",
+          "target": {
+            "groupId": "bb30081f-2510-4782-aa89-2f080d4a1cc6",
+            "@odata.type": "#microsoft.graph.exclusionGroupAssignmentTarget"
+          },
+          "settings": null,
+          "id": "bb30081f-2510-4782-aa89-2f080d4a1cc6_1_1"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "04fc5372-aa40-4a85-8cc5-cbd9268b8898",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "user",
+          "deviceRestartBehavior": "allow"
+        },
+        "displayName": "[MYSG] Condeco Outlook Addin",
+        "allowedArchitectures": null,
+        "publisher": "Condeco",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2H20",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "msiexec /i \"Condeco.Outlook.Addin.6.6.11.05.msi\" /qn",
+        "owner": "",
+        "description": "Condeco Outlook Addin for users to check and book MYSG meeting rooms.",
+        "fileName": "Condeco.Outlook.Addin.6.6.11.05.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "msiexec /x \"{3AEF5E4B-4893-4F3B-B22F-55159785BE92}\" /qn",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Program Files (x86)\\Condeco\\Condeco Outlook Add-in 6.6",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "CondecoAddinV2.dll"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x64",
+        "size": 3910784,
+        "developer": "",
+        "committedContentVersion": "2",
+        "setupFilePath": "setup.exe",
+        "lastModifiedDateTime": "2024-01-11T03:33:03Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": {
+          "productCode": "{3AEF5E4B-4893-4F3B-B22F-55159785BE92}",
+          "productName": "Condeco Outlook Add-in 6.6",
+          "publisher": "Condeco",
+          "upgradeCode": "{DE51573B-1788-4E4F-A31A-1D2F879503CD}",
+          "packageType": "dualPurpose",
+          "productVersion": "6.6.1105",
+          "requiresReboot": false
+        },
+        "createdDateTime": "2023-02-15T06:50:59Z",
+        "informationUrl": "https://sodexosg.condecosoftware.com/"
+      },
+      "assignments": [
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4173372f-8b5f-460c-9a54-68620a9ec80c",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4173372f-8b5f-460c-9a54-68620a9ec80c_0_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "3316ac58-87b3-496f-aa5e-2022f2af675a",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "3316ac58-87b3-496f-aa5e-2022f2af675a_0_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "b29aae7f-d553-4611-bb4c-0c204937c362",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "[SGMY] HR Voice Survey Wallpaper",
+        "allowedArchitectures": null,
+        "publisher": "HR Voice Survey Wallpaper",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2H20",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell -ex bypass -file Wallpaper_VoiceSurvey.ps1",
+        "owner": "",
+        "description": "Apply HR Voice Survey Wallpaper for SG MY",
+        "fileName": "Wallpaper_VoiceSurvey.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "del C:\\Windows\\Web\\Wallpaper\\Windows\\Voice_Survey",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\Web\\Wallpaper\\Windows",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "Voice_Survey.jpg"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x64",
+        "size": 335840,
+        "developer": "",
+        "committedContentVersion": "2",
+        "setupFilePath": "Wallpaper_VoiceSurvey.ps1",
+        "lastModifiedDateTime": "2023-06-21T08:47:24Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2023-04-14T09:27:38Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "uninstall",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "3316ac58-87b3-496f-aa5e-2022f2af675a",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "3316ac58-87b3-496f-aa5e-2022f2af675a_2_0"
+        },
+        {
+          "intent": "uninstall",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4173372f-8b5f-460c-9a54-68620a9ec80c",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4173372f-8b5f-460c-9a54-68620a9ec80c_2_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "b2a7ec1e-0aff-43c7-857d-329f55ca933b",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "[SGP] Sodexo SGP Wallpaper",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo SGP Wallpaper",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2H20",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell -ex bypass -file SodexoSGPWallpaper.ps1",
+        "owner": "SG-APC",
+        "description": "Apply Sodexo SGP Wallpaper with service desk contacts",
+        "fileName": "SodexoSGPWallpaper.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "powershell -ex bypass -file SodexoSGPWallpaper.ps1",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\Web\\Wallpaper\\Windows",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "WallpaperSodexoSG.jpeg"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x64",
+        "size": 338736,
+        "developer": "",
+        "committedContentVersion": "5",
+        "setupFilePath": "SodexoSGPWallpaper.ps1",
+        "lastModifiedDateTime": "2023-03-16T09:22:45Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2023-02-28T07:56:50Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "3316ac58-87b3-496f-aa5e-2022f2af675a",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "3316ac58-87b3-496f-aa5e-2022f2af675a_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "c26a9e66-777d-4c88-a50d-83d4b9d41353",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "c26a9e66-777d-4c88-a50d-83d4b9d41353_1_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "4ab76b96-4550-4c9f-9798-4517d6b4bf50",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": 150,
+        "notes": "Application Owner: Deshmukh, Tejashri / Tuscano, Simpson  (GNTS)\nlogos : https://www.netskope.com/fr/company/newsroom/netskope-logos#",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "force"
+        },
+        "displayName": "[TEST] Netskope Client New - FP Uninstall (GLB)",
+        "allowedArchitectures": null,
+        "publisher": "Netskope",
+        "privacyInformationUrl": "https://www.netskope.com/fr/privacy",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "Windows10_22H2",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy bypass -file GlobalApp-Script.ps1 -Mode \"install\"",
+        "owner": "GNTS",
+        "description": "Netskope, a global cybersecurity leader, is redefining cloud, data, and network security to help organizations apply zero trust principles to protect data. Fast and easy\n\nto use, the Netskope platform provides optimized access and real-time security for people, devices, and data anywhere they go. Netskope helps customers reduce risk, accelerate performance, and get unrivaled visibility into any cloud, web, and private application activity. Thousands of customers, including more than 25 of the Fortune 100, trust Netskope and its powerful NewEdge network to address evolving threats, new risks, technology shifts, organizational and network changes, and new regulatory requirements. Learn how Netskope helps customers be ready for anything on their SASE journey, visit netskope.com.\n\nThe Netskope’s Client for iOS includes CASB, SWG, CFW and NPA features. Netskope Client enables any user connecting from any device or location fast access to their web, cloud, or private apps, and a secure work experience with no trade-offs for unified data and threat protection.\n\nNetskope Client is a fast, lightweight, non-intrusive application that establishes a secure tunnel to steer traffic from the end user's device to the Netskope cloud without demanding massive spends or a heavy bandwidth investment as with legacy technologies.\n\nFor more information, please refer to https://docs.netskope.com/en/traffic-steering.html",
+        "fileName": "Netskope.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy ByPass -File GlobalApp-Script.ps1 -Mode \"uninstall\"",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Program Files (x86)\\Netskope\\STAgent",
+            "operationType": "version",
+            "comparisonValue": "135.1.14.2637",
+            "operator": "greaterThanOrEqual",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "stAgentUI.exe"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 27336464,
+        "developer": "GLB - UEM",
+        "committedContentVersion": "1",
+        "setupFilePath": "GlobalApp-Script.ps1",
+        "lastModifiedDateTime": "2026-07-28T15:11:05Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2026-06-12T16:19:19Z",
+        "informationUrl": "https://docs.netskope.com/en/netskope-help/netskope-client/netskope-client-deployment-options/microsoft-intune/"
+      },
+      "assignments": [
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "9b68ecc5-8904-4266-af44-ff9b60ddf53a",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "9b68ecc5-8904-4266-af44-ff9b60ddf53a_0_0"
+        },
+        {
+          "intent": "required",
+          "target": {
+            "groupId": "9b68ecc5-8904-4266-af44-ff9b60ddf53a",
+            "@odata.type": "#microsoft.graph.exclusionGroupAssignmentTarget"
+          },
+          "settings": null,
+          "id": "9b68ecc5-8904-4266-af44-ff9b60ddf53a_1_1"
+        }
+      ],
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Computer Management",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "981deed8-6857-4e78-a50e-c3f61d312737"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "9fbee917-1f14-43a8-9fc1-f074117248b0",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "user",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "_Setting - Modify List Seperator - BE",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo B.V.",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1909",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "\"modify_list-seperator.bat\"",
+        "owner": "BE - OSS",
+        "description": "Set the correct List Seperator to \";\"",
+        "fileName": "Modify_List-Seperator.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "N/A",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "keyPath": "HKCU\\Control Panel\\International",
+            "operationType": "string",
+            "comparisonValue": ";",
+            "operator": "equal",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": "sList"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "none",
+        "size": 320,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "modify_list-seperator.bat",
+        "lastModifiedDateTime": "2025-11-19T09:32:17Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2021-05-04T08:41:09Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "dc1264d0-9a07-49ff-b1ab-dd6d191a339a",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "dc1264d0-9a07-49ff-b1ab-dd6d191a339a_1_0"
+      },
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Productivity",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "ed899483-3019-425e-a470-28e901b9790e"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "bedd18a7-cdbd-4c6d-b035-400828ccd400",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "user",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "_Setting - Office365 - BE",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo B.V.",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1909",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "\"apply_settings_office365.bat\"",
+        "owner": "BE -OSS",
+        "description": "Applies the necessary O365 registry settings.",
+        "fileName": "O365_Settings.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "N/A",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "keyPath": "HKCU\\SOFTWARE\\Microsoft\\Office\\16.0\\Outlook\\Preferences",
+            "operationType": "exists",
+            "comparisonValue": "",
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": "DelegateSentItemsStyle"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "none",
+        "size": 976,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "apply_settings_office365.bat",
+        "lastModifiedDateTime": "2025-11-19T09:32:39Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2021-05-04T08:52:48Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "dc1264d0-9a07-49ff-b1ab-dd6d191a339a",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "dc1264d0-9a07-49ff-b1ab-dd6d191a339a_1_0"
+      },
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "8de8a2eb-231d-4772-b5b2-8881a3585e41",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "_Setting - WindowsFirewallRules - BE",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo Belgium",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1909",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "\"SetWindowsFirewallRules.bat\"",
+        "owner": "BE - OSS",
+        "description": "SetWindowsFirewallRules.bat",
+        "fileName": "SetWindowsFirewallRules.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "-",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\ProgramData\\Temp",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "FirewallSettingsApplied.txt"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "none",
+        "size": 1088,
+        "developer": "",
+        "committedContentVersion": "8",
+        "setupFilePath": "SetWindowsFirewallRules.bat",
+        "lastModifiedDateTime": "2025-11-19T09:32:56Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2021-03-26T17:52:28Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "dc1264d0-9a07-49ff-b1ab-dd6d191a339a",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "dc1264d0-9a07-49ff-b1ab-dd6d191a339a_1_0"
+      },
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Productivity",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "ed899483-3019-425e-a470-28e901b9790e"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "949745b9-6ae8-4aa9-8b08-30abdb22294f",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "_Settings - Korian Printers",
+        "allowedArchitectures": null,
+        "publisher": "BE - IS&T",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2H20",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "\"Install_Korian_Printer.bat\"",
+        "owner": "BE - IS&T",
+        "description": "Install Printers Korian",
+        "fileName": "Install_Korian_Printer.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "\"Uninstall_Korian_Printer.bat\"",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Program Files\\printix.net\\Printix Client",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "PrintixClient.exe"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x64",
+        "size": 10903696,
+        "developer": "",
+        "committedContentVersion": "2",
+        "setupFilePath": "Install_Korian_Printer.bat",
+        "lastModifiedDateTime": "2024-07-24T09:19:48Z",
+        "isFeatured": true,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2024-05-14T07:22:53Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "244abeb1-ca1e-4a67-8a02-ce6e10f5dd1a",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "244abeb1-ca1e-4a67-8a02-ce6e10f5dd1a_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "2af6de54-0e08-4672-9b92-9a0c8f0ce825",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "2af6de54-0e08-4672-9b92-9a0c8f0ce825_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "b7efed4d-78fe-4838-a24b-aafbe5928576",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "b7efed4d-78fe-4838-a24b-aafbe5928576_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "bc1b3539-2a50-4b26-a1ba-53a25c6cda6e",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "bc1b3539-2a50-4b26-a1ba-53a25c6cda6e_1_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Business",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "2b73ae71-12c8-49be-b462-3dae769ccd9d"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "2b9a5c6c-d803-4087-9a27-b5491915275b",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "_Settings - Korian Shortcut - BE",
+        "allowedArchitectures": null,
+        "publisher": "BE - IS&T",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "Windows11_21H2",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "%windir%\\system32\\windowspowershell\\v1.0\\powershell.exe -executionpolicy bypass -windowstyle hidden -file \"Create-Shortcut.ps1\"",
+        "owner": "BE - OSS",
+        "description": "App to set some settings for Korian Laptop",
+        "fileName": "Korian_Settings.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "%windir%\\system32\\windowspowershell\\v1.0\\powershell.exe -executionpolicy bypass -windowstyle hidden -file \"Delete-Shortcut.ps1\"",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "operator": "notConfigured",
+            "scriptContent": "77u/I05hbWUgb2YgdGhlIHNob3J0Y3V0DQokc2hvcnRjdXROYW1lID0gIlNoYXJlcG9pbnQgS29yaWFuIiANCiANCmlmIChUZXN0LVBhdGggLVBhdGggIiRFbnY6UHVibGljXERlc2t0b3BcJHNob3J0Y3V0TmFtZS5sbmsiKXsNCiAgICBXcml0ZS1PdXRwdXQgIjAiDQp9",
+            "comparisonValue": null,
+            "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptRule",
+            "runAsAccount": null,
+            "displayName": null,
+            "operationType": "notConfigured",
+            "runAs32Bit": false,
+            "ruleType": "detection",
+            "enforceSignatureCheck": false
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "none",
+        "size": 1520,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "Create-Shortcut.ps1",
+        "lastModifiedDateTime": "2025-11-19T09:34:06Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2024-05-14T06:49:17Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "7712b43f-7770-4ddd-995f-4868c7456493",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "7712b43f-7770-4ddd-995f-4868c7456493_1_0"
+      },
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "55ce5614-bcc8-4167-9d6e-66cad109fc85",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "user",
+          "deviceRestartBehavior": "allow"
+        },
+        "displayName": "_Settings - SAPLogon - BE",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo Belgium",
+        "privacyInformationUrl": "",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "Windows11_22H2",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "\"set_settings_sap-front-end.bat\"",
+        "owner": "BE- OSS",
+        "description": "Configuration file for SAP Logon",
+        "fileName": "set_settings_sap-front-end.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "\"\"",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "%appdata%\\SAP\\Common",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "NewConfig2025.txt"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 2656,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "set_settings_sap-front-end.bat",
+        "lastModifiedDateTime": "2025-12-24T10:17:12Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-12-24T10:17:12Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "d74f0389-7f8e-4439-b6cc-ef65dc4a4471",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "d74f0389-7f8e-4439-b6cc-ef65dc4a4471_1_0"
+      },
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "309de5c5-1c7b-4992-91cd-44bdca578fd6",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "_Shortcut - Microsoft 365 Online - NL",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo B.V.",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1909",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "\"Microsoft Office Online.bat\"",
+        "owner": "NL - OSS",
+        "description": "Microsoft 365 Online",
+        "fileName": "Microsoft Office 365 Online.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "-",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Users\\Public\\Desktop",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "Microsoft Office PowerPoint Online.URL"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "none",
+        "size": 1792,
+        "developer": "Microsoft",
+        "committedContentVersion": "2",
+        "setupFilePath": "Microsoft Office Online.bat",
+        "lastModifiedDateTime": "2025-07-15T13:13:39Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2021-03-26T17:53:22Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "761cf0a7-2835-48eb-ba35-28c58c84fc11",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "761cf0a7-2835-48eb-ba35-28c58c84fc11_1_0"
+      },
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Productivity",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "ed899483-3019-425e-a470-28e901b9790e"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "775bb7a1-4fc2-4d92-943e-27ac5a00470d",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "HWI Base",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "00_IMAGE - Local Support Accounts Config",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo NorAm",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File install.ps1",
+        "owner": "NorAm",
+        "description": "AddLocalAccounts_Image",
+        "fileName": "install-LSAV5.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "uninstall-LSA.bat",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\_SDXInstall\\LSA",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "LocalAdmin_Create.log"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 3952,
+        "developer": "",
+        "committedContentVersion": "5",
+        "setupFilePath": "AddLocalAccounts_Image.exe",
+        "lastModifiedDateTime": "2026-01-13T15:14:54Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2024-04-04T20:30:24Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "744de108-85a0-4d43-8cec-3cd916359daf",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "744de108-85a0-4d43-8cec-3cd916359daf_1_0"
+      },
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "62dfd152-3046-49ba-a4bc-bb71fbff172d",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "HWI Base - Base Image Delta v2.0. // 2026-02-18 added Teams to the Start Menu",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "01_IMAGE - Run SDX Image Delta v2.0 (ESP)",
+        "allowedArchitectures": null,
+        "publisher": "NorAm EUCS",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2004",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "Run_SDX_Intune_Image_Delta.exe",
+        "owner": "NorAm EUCS",
+        "description": "Run_SDX_Intune_Image_Delta.exe - NorAm image delta resistual settings and components. This includes UX and customizations. It excludes apps and other components that are delivered as separate Intune packages.",
+        "fileName": "Run_SDX_Intune_Image_Delta.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "Run_SDX_Intune_Image_Delta.exe",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\SDX_Files\\WinSetup",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "WinSetup_Execution.log"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 23848736,
+        "developer": "NorAm EUCS",
+        "committedContentVersion": "6",
+        "setupFilePath": "Run_SDX_Intune_Image_Delta.exe",
+        "lastModifiedDateTime": "2026-03-20T15:06:01Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-12-22T21:37:33Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "0db493b7-808e-4e1b-a7c1-f4605880b969",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "0db493b7-808e-4e1b-a7c1-f4605880b969_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "744de108-85a0-4d43-8cec-3cd916359daf",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "744de108-85a0-4d43-8cec-3cd916359daf_1_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4d157d4b-2c9e-46f4-9004-0001a271a341",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4d157d4b-2c9e-46f4-9004-0001a271a341_0_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Computer Management",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "981deed8-6857-4e78-a50e-c3f61d312737"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "b6488bb0-cfe5-4488-b4fc-406837659e61",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "HWI Base",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "05_IMAGE - Microsoft .NET 3.5 (Local CAB win11 24H2/25H2) (ESP)",
+        "allowedArchitectures": null,
+        "publisher": "Microsoft",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "Windows11_24H2",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "Install-NetFx3.bat",
+        "owner": "NorAm",
+        "description": "Microsoft .NET 3.5 (Local CAB for windows 11 24H2 and Leter)",
+        "fileName": "Install-NetFx3.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "Uninstall-NetFx3.bat",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\Microsoft.NET\\Framework64",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "v3.5"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 71033968,
+        "developer": "NorAm",
+        "committedContentVersion": "1",
+        "setupFilePath": "Install-NetFx3.bat",
+        "lastModifiedDateTime": "2026-03-20T16:19:02Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-11-04T19:36:09Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "744de108-85a0-4d43-8cec-3cd916359daf",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "744de108-85a0-4d43-8cec-3cd916359daf_1_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4d157d4b-2c9e-46f4-9004-0001a271a341",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4d157d4b-2c9e-46f4-9004-0001a271a341_0_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "208b16cc-43b5-4c84-add3-df48f8d7ca22",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "HWI Base",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "10_IMAGE - AutoTimezone Remediation (ESP)",
+        "allowedArchitectures": null,
+        "publisher": "SODEXO",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2H20",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "Install-AutoTimezone.bat",
+        "owner": "NorAm",
+        "description": "Enable AutoTimezone and location configuration",
+        "fileName": "Install-AutoTimezone-ESP.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "Install-AutoTimezone.bat",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\_SDXInstall\\AutoTimeZone",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "done.txt"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 2064,
+        "developer": "NorAm",
+        "committedContentVersion": "2",
+        "setupFilePath": "Install-AutoTimezone.bat",
+        "lastModifiedDateTime": "2026-01-08T23:50:09Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-11-24T13:22:40Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "744de108-85a0-4d43-8cec-3cd916359daf",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "744de108-85a0-4d43-8cec-3cd916359daf_1_0"
+        },
+        {
+          "intent": "required",
+          "target": {
+            "groupId": "0db493b7-808e-4e1b-a7c1-f4605880b969",
+            "@odata.type": "#microsoft.graph.exclusionGroupAssignmentTarget"
+          },
+          "settings": null,
+          "id": "0db493b7-808e-4e1b-a7c1-f4605880b969_1_1"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "bb94a276-32fc-46d3-8d3e-b0cf3be285ec",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "HWI Base",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "15_IMAGE - HighPerformance PowerOptions (ESP) -- ToBeDeleted",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "2004",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "Install.bat",
+        "owner": "NorAm",
+        "description": "USS - OSS - HighPerformance PowerOptions (ESP) Pending by policy test (Delete)",
+        "fileName": "PowerOptionsV2.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "Install.bat",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Windows\\_SDXInstall\\Power",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "EnableHighPerformance.log"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 1536,
+        "developer": "NorAm",
+        "committedContentVersion": "2",
+        "setupFilePath": "Install.bat",
+        "lastModifiedDateTime": "2026-04-04T02:08:38Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2026-01-07T17:35:03Z",
+        "informationUrl": null
+      },
+      "assignments": null,
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "e170b4c2-ac0b-4449-8c2e-5e7371395026",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "HWI Base",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "15_IMAGE - Sodexo Default Power Scheme (ESP)",
+        "allowedArchitectures": null,
+        "publisher": "NorAm",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File .\\Install_Sodexo_Default_Power_Scheme.ps1",
+        "owner": "NorAm",
+        "description": "Default Sodexo power scheme settings for display off and sleep modes while on battery or plug-in power.",
+        "fileName": "Install_Sodexo_Default_Power_Scheme.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File Uninstall_Sodexo_Default_Power_Scheme.ps1",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "%ProgramData%\\Sodexo\\PowerScheme",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "Sodexo_Default_Power_Scheme.installed"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 6000,
+        "developer": "NorAm",
+        "committedContentVersion": "3",
+        "setupFilePath": "Install_Sodexo_Default_Power_Scheme.ps1",
+        "lastModifiedDateTime": "2026-04-07T15:53:38Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2026-04-04T01:18:20Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "foreground",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "744de108-85a0-4d43-8cec-3cd916359daf",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "744de108-85a0-4d43-8cec-3cd916359daf_1_0"
+      },
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Computer Management",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "981deed8-6857-4e78-a50e-c3f61d312737"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "bb960c24-4f26-495e-b3d9-e69c5c431b29",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "20_IMAGE - Edge Web View (ESP)",
+        "allowedArchitectures": null,
+        "publisher": "Sodexo NorAm",
+        "privacyInformationUrl": "",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1",
+        "owner": "",
+        "description": "20_IMAGE - Edge Web View Bootstrapper (ESP)",
+        "fileName": "EdgeWebView.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "Application"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 1600224,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "install.ps1",
+        "lastModifiedDateTime": "2026-04-13T19:24:23Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2026-04-13T19:24:23Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "744de108-85a0-4d43-8cec-3cd916359daf",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "744de108-85a0-4d43-8cec-3cd916359daf_1_0"
+      },
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "607b976b-a55f-4312-82ca-cb6893ab4c0a",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "Configured the following:\n$RegSubKey = \"SOFTWARE\\Microsoft\\WindowsUpdate\\UX\\Settings\"\n$ValueName = \"RestartNotificationsAllowed2\"\n$ValueData = 1",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "22_IMAGE - Enable User Restart Notifications for Windows Updates",
+        "allowedArchitectures": null,
+        "publisher": "NorAm",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File .\\install.ps1",
+        "owner": "NorAm",
+        "description": "Enables the Windows Updates setting to notify the user when a restart is required to finish updates. This setting is not available to be enabled via Intune catalog settings.",
+        "fileName": "RNWUV3.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File .\\uninstall.ps1",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "keyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\WindowsUpdate\\UX\\Settings",
+            "operationType": "integer",
+            "comparisonValue": "1",
+            "operator": "equal",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": "RestartNotificationsAllowed2"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 2000,
+        "developer": "NorAm",
+        "committedContentVersion": "3",
+        "setupFilePath": "install.ps1",
+        "lastModifiedDateTime": "2026-08-12T17:54:02Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2026-04-14T21:20:37Z",
+        "informationUrl": null
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "deliveryOptimizationPriority": "notConfigured",
+          "notifications": "showAll",
+          "restartSettings": null,
+          "installTimeSettings": null,
+          "autoUpdateSettings": null,
+          "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+        },
+        "target": {
+          "groupId": "744de108-85a0-4d43-8cec-3cd916359daf",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "744de108-85a0-4d43-8cec-3cd916359daf_1_0"
+      },
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Computer Management",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "981deed8-6857-4e78-a50e-c3f61d312737"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "b16c2f02-3779-40c8-87ba-c592672b9a18",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "allow"
+        },
+        "displayName": "3 Step IT Profiler Client",
+        "allowedArchitectures": null,
+        "publisher": "333",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "msiexec /i \"ProfilerClient_v.1.4.0_4.0.msi\" CUSTOMERID=497751718 /qn",
+        "owner": "",
+        "description": "3 Step IT Profiler Client",
+        "fileName": "ProfilerClient_v.1.4.0_4.0.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "msiexec /x \"{2135C53A-9AA6-474E-BD72-4F56392596B6}\" /qn",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "@odata.type": "#microsoft.graph.win32LobAppProductCodeRule",
+            "ruleType": "detection",
+            "productVersion": null,
+            "productVersionOperator": "notConfigured",
+            "productCode": "{2135C53A-9AA6-474E-BD72-4F56392596B6}"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 360512,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "ProfilerClient_v.1.4.0_4.0.msi",
+        "lastModifiedDateTime": "2025-11-27T10:55:35Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": {
+          "productCode": "{2135C53A-9AA6-474E-BD72-4F56392596B6}",
+          "productName": "3 Step IT Profiler Client",
+          "publisher": "3 Step IT",
+          "upgradeCode": "{EAE94FB2-C293-4D29-B7B0-CE02D558502F}",
+          "packageType": "dualPurpose",
+          "productVersion": "1.4.0",
+          "requiresReboot": false
+        },
+        "createdDateTime": "2025-11-27T10:19:53Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "091e3769-d4a7-4eb5-9290-571e2808c2ce",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "091e3769-d4a7-4eb5-9290-571e2808c2ce_0_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "6770b096-e1fd-4d1f-a9f2-e0e08ed6ce45",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "6770b096-e1fd-4d1f-a9f2-e0e08ed6ce45_0_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "be9e8145-a7f1-4f3a-9d03-c706126cef72",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "allow"
+        },
+        "displayName": "3 Step IT Profiler Client 1.4.0 MUL [1.0]",
+        "allowedArchitectures": null,
+        "publisher": "3 Step",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "ServiceUI.exe Launcher.exe -i",
+        "owner": "",
+        "description": "Launcher.exe",
+        "fileName": "Launcher.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "ServiceUI.exe Launcher.exe -u",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "keyPath": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{2135C53A-9AA6-474E-BD72-4F56392596B6}",
+            "operationType": "string",
+            "comparisonValue": "3 Step IT Profiler Client 1.4.0 MUL [1.0]",
+            "operator": "equal",
+            "check32BitOn64System": true,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": "Comments"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 61849952,
+        "developer": "",
+        "committedContentVersion": "2",
+        "setupFilePath": "Launcher.exe",
+        "lastModifiedDateTime": "2025-11-26T12:35:53Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-11-18T15:29:03Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "091e3769-d4a7-4eb5-9290-571e2808c2ce",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "091e3769-d4a7-4eb5-9290-571e2808c2ce_0_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "6770b096-e1fd-4d1f-a9f2-e0e08ed6ce45",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "6770b096-e1fd-4d1f-a9f2-e0e08ed6ce45_0_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": null,
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "privacyInformationUrl": null,
+        "bundleId": "com.sevenshifts.ios.sevenshifts",
+        "publisher": "7shifts, Inc.",
+        "largeIcon": null,
+        "developer": null,
+        "totalLicenseCount": 5000,
+        "lastModifiedDateTime": "2025-05-22T23:19:49Z",
+        "vppTokenAccountType": "business",
+        "id": "ecafb9a6-5f1f-46ff-856c-0cce7a8142f8",
+        "notes": null,
+        "isFeatured": false,
+        "displayName": "7shifts: Employee Scheduling",
+        "createdDateTime": "2024-11-06T20:05:35Z",
+        "usedLicenseCount": 23,
+        "description": "The 7shifts restaurant scheduling app makes it easy to manage schedules and communicate with staff on the go. \n\nWith 7shifts, your managers can edit work schedules, communicate with and engage staff, track real-time sales and labor data, and stay labor compliant. The employee app empowers your team to take availability and time-off requests, shift trading, and communication into their own hands—anytime, anywhere. \n\nThe 7shifts app is free for all restaurant employees to use as part of your 7shifts subscription.\n\nFeatures for restaurant managers:\n- Manage the schedule with time-off and availability automatically added\n- Notify staff of their shifts automatically via email, text, or push notification\n- Approve or deny shift trades\n- Approve or deny time-off requests\n- Track staff availability\n- Track staff engagement like lates and no-shows\n- Chat with staff or create team-wide announcements\n- Get overtime alerts if staff are at risk of going into overtime\n- Track real-time sales and labor to make smart decisions to reduce labor cost\n\nFeatures for restaurant employees:\n- View all of your shifts\n- See who you are working with for upcoming shifts\n- View hours and estimated earnings\n- Request shift trades\n- Request time off\n- Submit your availability\n- Chat with GIFs, pics, or emojis with your co-workers\n\nThe 7shifts team is focused on making employee scheduling easier for managers in the restaurant industry, and make employees happier in the workplace. See how easy life is with 7shifts.",
+        "appStoreUrl": null,
+        "informationUrl": "https://apps.apple.com/us/app/7shifts-employee-scheduling/id731444612",
+        "publishingState": "published",
+        "licensingType": {
+          "supportsDeviceLicensing": true,
+          "supportsUserLicensing": true
+        },
+        "vppTokenAppleId": "dl.na.is.appleprograms@sodexousacom.appleid.com",
+        "applicableDeviceType": {
+          "iPad": true,
+          "iPhoneAndIPod": true
+        },
+        "owner": null,
+        "@odata.type": "#microsoft.graph.iosVppApp",
+        "vppTokenOrganizationName": "SODEXO OPERATIONS, LLC",
+        "releaseDateTime": "0001-01-01T00:00:00Z"
+      },
+      "assignments": {
+        "intent": "required",
+        "settings": {
+          "@odata.type": "#microsoft.graph.iosVppAppAssignmentSettings",
+          "vpnConfigurationId": null,
+          "useDeviceLicensing": true
+        },
+        "target": {
+          "groupId": "69051a2e-76c4-4a45-b6bf-a2d23d555849",
+          "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+        },
+        "id": "69051a2e-76c4-4a45-b6bf-a2d23d555849_1_0"
+      },
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Other Apps",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "0720a99e-562b-4a77-83f0-9a7523fcf13e"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "741ceab1-6256-4c78-8afa-ed6a6a90ecd6",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "Deployed by Shivangi Mishra",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "7-Zip - GLB",
+        "allowedArchitectures": null,
+        "publisher": "Igor Pavlov",
+        "privacyInformationUrl": "https://www.7-zip.org/",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "21H1",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell.exe -ExecutionPolicy Bypass -File \"GlobalApp-Script.ps1\" -Mode Install",
+        "owner": "GLB UEM",
+        "description": "7-Zip is a free file archiver, a tool used to place groups of files within compressed containers known as \"archives\". 7-Zip has its own archive format called 7z, but can read and write several others. The program can be used from a Windows graphical user interface that also features shell integration, from a Windows command-line interface as the command 7za.exe, and from POSIX systems as p7zip.\n\nSupported formats: Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM Unpacking AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR.",
+        "fileName": "GlobalApp-Script (5).intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "powershell.exe -ExecutionPolicy Bypass -File \"GlobalApp-Script.ps1\" -Mode Uninstall",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "@odata.type": "#microsoft.graph.win32LobAppProductCodeRule",
+            "ruleType": "detection",
+            "productVersion": null,
+            "productVersionOperator": "notConfigured",
+            "productCode": "{23170F69-40C1-2702-2600-000001000000}"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 1967696,
+        "developer": "Harsh Kambojh",
+        "committedContentVersion": "1",
+        "setupFilePath": "GlobalApp-Script.ps1",
+        "lastModifiedDateTime": "2026-04-10T19:21:44Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2026-03-25T15:04:22Z",
+        "informationUrl": "https://www.7-zip.org/license.txt"
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "2a0777df-c443-48dd-a7ad-735c0b7de064",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "2a0777df-c443-48dd-a7ad-735c0b7de064_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "dace4f00-5345-48a7-9992-9090783af53b",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "dace4f00-5345-48a7-9992-9090783af53b_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "d48c72e1-bfd4-421b-b152-4c1209a42402",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "d48c72e1-bfd4-421b-b152-4c1209a42402_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "0e00c996-2943-4289-bb59-c7958c177e06",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "0e00c996-2943-4289-bb59-c7958c177e06_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "c418db76-7416-452a-a8d6-f0a39a399a96",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "c418db76-7416-452a-a8d6-f0a39a399a96_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "5e93a6f8-7d98-4c4f-b1e0-cb34162ad072",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "5e93a6f8-7d98-4c4f-b1e0-cb34162ad072_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "bc1b3539-2a50-4b26-a1ba-53a25c6cda6e",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "bc1b3539-2a50-4b26-a1ba-53a25c6cda6e_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "0d855c35-55ba-4320-9103-334d4c289db5",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "0d855c35-55ba-4320-9103-334d4c289db5_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "130dce03-b0d2-42d3-9586-d2a66cd1f41f",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "130dce03-b0d2-42d3-9586-d2a66cd1f41f_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "81f339ec-388f-4d96-b6f1-afe0472ea535",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "81f339ec-388f-4d96-b6f1-afe0472ea535_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "5c4f6ed7-d5b4-43b2-9982-3c3f5930f1b6",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "5c4f6ed7-d5b4-43b2-9982-3c3f5930f1b6_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "244abeb1-ca1e-4a67-8a02-ce6e10f5dd1a",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "244abeb1-ca1e-4a67-8a02-ce6e10f5dd1a_1_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "13bfd531-a9eb-4d28-b925-30200f897ffa",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "13bfd531-a9eb-4d28-b925-30200f897ffa_0_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "55222ef2-1b0a-405d-907b-d6695c0195b7",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "55222ef2-1b0a-405d-907b-d6695c0195b7_0_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "f2fba7fd-f7e0-4aa6-990e-6bcde9aa3e26",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "f2fba7fd-f7e0-4aa6-990e-6bcde9aa3e26_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "2af6de54-0e08-4672-9b92-9a0c8f0ce825",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "2af6de54-0e08-4672-9b92-9a0c8f0ce825_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "b7efed4d-78fe-4838-a24b-aafbe5928576",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "b7efed4d-78fe-4838-a24b-aafbe5928576_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "5523f382-ffd0-4f05-9eba-0ed652271394",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "5523f382-ffd0-4f05-9eba-0ed652271394_1_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "382b8682-dc34-4978-acf9-e2a1d17b533e",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "382b8682-dc34-4978-acf9-e2a1d17b533e_0_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "2c1f6897-d219-4350-baad-e7889f96e9be",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "2c1f6897-d219-4350-baad-e7889f96e9be_1_0"
+        },
+        {
+          "intent": "available",
+          "settings": {
+            "deliveryOptimizationPriority": "foreground",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "5341c734-7dc0-4030-8253-6c793c3ef558",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "5341c734-7dc0-4030-8253-6c793c3ef558_0_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4cf25c1b-018a-4bc5-99ad-a916ac0ca7ec",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4cf25c1b-018a-4bc5-99ad-a916ac0ca7ec_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4ae2a725-c99b-4cd8-97c4-82cb742254dc",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4ae2a725-c99b-4cd8-97c4-82cb742254dc_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "e9b7eeff-eb8b-4418-9dea-de3138c8b309",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "e9b7eeff-eb8b-4418-9dea-de3138c8b309_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "820538f1-2f27-4716-8bed-51423e228e2b",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "820538f1-2f27-4716-8bed-51423e228e2b_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "e8d3e243-c68a-4330-8d2d-5faa104ca6c0",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "e8d3e243-c68a-4330-8d2d-5faa104ca6c0_1_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Productivity",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "ed899483-3019-425e-a470-28e901b9790e"
+      },
+      "categories_error": null,
+      "relationships": {
+        "targetDisplayVersion": "25.01.00.0",
+        "supersedingAppCount": 0,
+        "targetPublisherDisplayName": "Igor Pavlov",
+        "sourceDisplayVersion": "26.00",
+        "id": "741ceab1-6256-4c78-8afa-ed6a6a90ecd6_75ce36f1-df5f-4c4f-85ec-a864f36b0713",
+        "sourceId": "741ceab1-6256-4c78-8afa-ed6a6a90ecd6",
+        "targetDisplayName": "7-Zip (GLB)",
+        "sourceDisplayName": "7-Zip - GLB",
+        "@odata.type": "#microsoft.graph.mobileAppSupersedence",
+        "targetType": "child",
+        "targetId": "75ce36f1-df5f-4c4f-85ec-a864f36b0713",
+        "supersedenceType": "update",
+        "targetPublisher": "Igor Pavlov",
+        "supersededAppCount": 0,
+        "sourcePublisherDisplayName": "Igor Pavlov"
+      },
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "75ce36f1-df5f-4c4f-85ec-a864f36b0713",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "Packaged by Hakim and Pierre",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "7-Zip (GLB)",
+        "allowedArchitectures": null,
+        "publisher": "Igor Pavlov",
+        "privacyInformationUrl": "https://www.7-zip.org/license.txt",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "Windows10_22H2",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy ByPass -File .\\GlobalApp-Script.ps1 -mode \"Install\" -UninstallPreviousVersion",
+        "owner": "GLB - UEM",
+        "description": "7-Zip is a free file archiver, a tool used to place groups of files within compressed containers known as \"archives\". 7-Zip has its own archive format called 7z, but can read and write several others. The program can be used from a Windows graphical user interface that also features shell integration, from a Windows command-line interface as the command 7za.exe, and from POSIX systems as p7zip.\n\nSupported formats: Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM Unpacking AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR.",
+        "fileName": "7-Zip_25.01.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy ByPass -File .\\GlobalApp-Script.ps1 -mode \"Uninstall\"",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "@odata.type": "#microsoft.graph.win32LobAppProductCodeRule",
+            "ruleType": "detection",
+            "productVersion": "25.01",
+            "productVersionOperator": "greaterThanOrEqual",
+            "productCode": "23170F69-40C1-2702-2501-000001000000"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 1964304,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "GlobalApp-Script.ps1",
+        "lastModifiedDateTime": "2025-10-16T07:21:59.5002864Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-10-16T07:21:59.5002864Z",
+        "informationUrl": "https://www.7-zip.org/"
+      },
+      "assignments": null,
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Productivity",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "ed899483-3019-425e-a470-28e901b9790e"
+      },
+      "categories_error": null,
+      "relationships": {
+        "targetDisplayVersion": "26.00",
+        "supersedingAppCount": 0,
+        "targetPublisherDisplayName": "Igor Pavlov",
+        "sourceDisplayVersion": "25.01.00.0",
+        "id": "741ceab1-6256-4c78-8afa-ed6a6a90ecd6_75ce36f1-df5f-4c4f-85ec-a864f36b0713",
+        "sourceId": "75ce36f1-df5f-4c4f-85ec-a864f36b0713",
+        "targetDisplayName": "7-Zip - GLB",
+        "sourceDisplayName": "7-Zip (GLB)",
+        "@odata.type": "#microsoft.graph.mobileAppSupersedence",
+        "targetType": "parent",
+        "targetId": "741ceab1-6256-4c78-8afa-ed6a6a90ecd6",
+        "supersedenceType": "update",
+        "targetPublisher": "Igor Pavlov",
+        "supersededAppCount": 0,
+        "sourcePublisherDisplayName": "Igor Pavlov"
+      },
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "3e93a123-cc8a-41fb-a2fa-3983a1380c56",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "Packaged by Hakim",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "7-Zip (GLB) - Cleanup",
+        "allowedArchitectures": null,
+        "publisher": "Igor Pavlov",
+        "privacyInformationUrl": "https://www.7-zip.org/license.txt",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "Windows10_22H2",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy ByPass -File .\\GlobalApp-Script.ps1 -mode \"Install\"",
+        "owner": "GLB - UEM",
+        "description": "7-Zip is a free file archiver, a tool used to place groups of files within compressed containers known as \"archives\". 7-Zip has its own archive format called 7z, but can read and write several others. The program can be used from a Windows graphical user interface that also features shell integration, from a Windows command-line interface as the command 7za.exe, and from POSIX systems as p7zip.\n\nSupported formats: Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM Unpacking AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR.",
+        "fileName": "7-Zip-Cleanup.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "%windir%\\SysNative\\WindowsPowershell\\v1.0\\PowerShell.exe -NoProfile -ExecutionPolicy ByPass -File .\\GlobalApp-Script.ps1 -mode \"Uninstall\"",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "@odata.type": "#microsoft.graph.win32LobAppProductCodeRule",
+            "ruleType": "detection",
+            "productVersion": "25.01",
+            "productVersionOperator": "greaterThanOrEqual",
+            "productCode": "23170F69-40C1-2702-2501-000001000000"
+          },
+          {
+            "path": "C:\\Windows\\Intune\\7-Zip",
+            "operationType": "exists",
+            "comparisonValue": null,
+            "operator": "notConfigured",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppFileSystemRule",
+            "fileOrFolderName": "Install-Cleanup2.log"
+          },
+          {
+            "operator": "equal",
+            "scriptContent": "JHZlcnNpb25TcGVjaWZpcXVlID0gW3ZlcnNpb25dIjI1LjAxIg0KJElzN1ppcE91dGRhdGVkID0gJEZhbHNlDQoNCiRyZXN1bHRzID0gR2V0LUNoaWxkSXRlbSAtUGF0aCAiSEtMTTpcU09GVFdBUkVcV09XNjQzMk5vZGVcTWljcm9zb2Z0XFdpbmRvd3NcQ3VycmVudFZlcnNpb25cVW5pbnN0YWxsIiwiSEtMTTpcU09GVFdBUkVcTWljcm9zb2Z0XFdpbmRvd3NcQ3VycmVudFZlcnNpb25cVW5pbnN0YWxsIiAtUmVjdXJzZSB8DQpXaGVyZS1PYmplY3QgeyAkXy5HZXRWYWx1ZSgiRGlzcGxheU5hbWUiKSAtbGlrZSAiKjctemlwKiIgfSB8DQpGb3JFYWNoLU9iamVjdCB7DQogICAgJGRpc3BsYXlWZXJzaW9uU3RyaW5nID0gJF8uR2V0VmFsdWUoIkRpc3BsYXlWZXJzaW9uIikNCiANCiAgICBpZiAoW3ZlcnNpb25dOjpUcnlQYXJzZSgkZGlzcGxheVZlcnNpb25TdHJpbmcsIFtyZWZdJG51bGwpKSB7DQogICAgICAgIFtQU0N1c3RvbU9iamVjdF1Aew0KICAgICAgICAgICAgRGlzcGxheU5hbWUgICAgPSAkXy5HZXRWYWx1ZSgiRGlzcGxheU5hbWUiKQ0KICAgICAgICAgICAgRGlzcGxheVZlcnNpb24gPSBbdmVyc2lvbl0kZGlzcGxheVZlcnNpb25TdHJpbmcNCiAgICAgICAgfQ0KICAgIH0NCn0NCg0KZm9yZWFjaCAoJGl0ZW0gaW4gJHJlc3VsdHMpIHsNCiAgICBpZiAoJGl0ZW0uRGlzcGxheVZlcnNpb24gLWx0ICR2ZXJzaW9uU3BlY2lmaXF1ZSkgew0KICAgICAgICAkSXM3WmlwT3V0ZGF0ZWQgPSAkVHJ1ZQ0KICAgIH0NCiAgICBlbHNlIHsNCiAgICAgICAgJElzN1ppcE91dGRhdGVkID0gJEZhbHNlDQogICAgfQ0KfQ0KDQoNCmlmICgoJHJlc3VsdHMpIC1hbmQgKCEoVGVzdC1QYXRoICJDOlxQcm9ncmFtIEZpbGVzXDctWmlwXDd6LmV4ZSIpKSkgew0KICAgICNXcml0ZS1Ib3N0ICJCcm9rZW4gaW5zdGFsbGF0aW9uIg0KICAgIFdyaXRlLU91dHB1dCAiT0siDQogICAgI2V4aXQgMQ0KfWVsc2VpZigkSXM3WmlwT3V0ZGF0ZWQgLWVxICRUcnVlKXsNCg0KICAgIFdyaXRlLU91dHB1dCAiT0siDQp9DQplbHNlIHsNCiAgICBXcml0ZS1PdXRwdXQgIktPIiANCn0=",
+            "comparisonValue": "OK",
+            "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptRule",
+            "runAsAccount": "system",
+            "displayName": "7-Zip-Detection.ps1",
+            "operationType": "string",
+            "runAs32Bit": false,
+            "ruleType": "requirement",
+            "enforceSignatureCheck": false
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "none",
+        "size": 3905088,
+        "developer": "",
+        "committedContentVersion": "1",
+        "setupFilePath": "GlobalApp-Script.ps1",
+        "lastModifiedDateTime": "2025-11-03T22:19:22Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2025-11-03T22:19:22Z",
+        "informationUrl": "https://www.7-zip.org/"
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "23902db2-ee71-4c7f-a0f7-552950a1e8f3",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "23902db2-ee71-4c7f-a0f7-552950a1e8f3_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "4ae2a725-c99b-4cd8-97c4-82cb742254dc",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "4ae2a725-c99b-4cd8-97c4-82cb742254dc_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "d48c72e1-bfd4-421b-b152-4c1209a42402",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "d48c72e1-bfd4-421b-b152-4c1209a42402_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "7c06e55d-4c72-4d98-920d-3ea79833980c",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "7c06e55d-4c72-4d98-920d-3ea79833980c_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "db7ac666-708a-4074-ba34-42e7c22f9009",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "db7ac666-708a-4074-ba34-42e7c22f9009_1_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Productivity",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "ed899483-3019-425e-a470-28e901b9790e"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "c323bf1f-82e9-4003-9090-40c0de7f8fb0",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "Packaged by Harsh Kambojh",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "suppress"
+        },
+        "displayName": "7-Zip 26.00 (x64) - GLB - Test",
+        "allowedArchitectures": null,
+        "publisher": "7-Zip",
+        "privacyInformationUrl": "https://www.7-zip.org/license.txt",
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "21H1",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "powershell.exe -ExecutionPolicy Bypass -File \"GlobalApp-Script.ps1\" -Mode Install",
+        "owner": "GLB UEM",
+        "description": "7‑Zip is a free and open‑source file archiving utility known for its high compression ratio and support for a wide range of archive formats.",
+        "fileName": "7z2600-x64.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "powershell.exe -ExecutionPolicy Bypass -File \"GlobalApp-Script.ps1\" -Mode Uninstall",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "keyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\7-Zip",
+            "operationType": "version",
+            "comparisonValue": "26.00",
+            "operator": "equal",
+            "check32BitOn64System": false,
+            "ruleType": "detection",
+            "@odata.type": "#microsoft.graph.win32LobAppRegistryRule",
+            "valueName": "DisplayVersion"
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 1653568,
+        "developer": "Harsh Kambojh",
+        "committedContentVersion": "1",
+        "setupFilePath": "Binaries\\7z2600-x64.exe",
+        "lastModifiedDateTime": "2026-03-27T10:01:32Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": null,
+        "createdDateTime": "2026-03-19T10:58:02Z",
+        "informationUrl": "https://www.7-zip.org/"
+      },
+      "assignments": null,
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Other Apps",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "0720a99e-562b-4a77-83f0-9a7523fcf13e"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    },
+    {
+      "app": {
+        "id": "47e47777-bc94-43dc-8232-f7fa871d4e81",
+        "publishingState": "published",
+        "minimumFreeDiskSpaceInMB": null,
+        "notes": "",
+        "installExperience": {
+          "runAsAccount": "system",
+          "deviceRestartBehavior": "allow"
+        },
+        "displayName": "Absolute Agent",
+        "allowedArchitectures": null,
+        "publisher": "BR-OSS",
+        "privacyInformationUrl": null,
+        "minimumCpuSpeedInMHz": null,
+        "minimumSupportedWindowsRelease": "1607",
+        "minimumNumberOfProcessors": null,
+        "installCommandLine": "msiexec /i \"AbsoluteFullAgent.msi\" /qn",
+        "owner": "GDI BR",
+        "description": "Distribution of Absolute full Agent for Brazil machines.",
+        "fileName": "AbsoluteFullAgent.intunewin",
+        "largeIcon": null,
+        "uninstallCommandLine": "msiexec /x \"{FF7DC379-95D6-4E8A-B543-F099C9577B07}\" /qn",
+        "minimumMemoryInMB": null,
+        "rules": [
+          {
+            "operator": "notConfigured",
+            "scriptContent": "77u/JHNlcnZpY2UgPSBHZXQtU2VydmljZSAtTmFtZSAiUlBDTkVUIg0KaWYgKCRzZXJ2aWNlLlN0YXR1cyAtZXEgIlJ1bm5pbmciKXsNCiAgICBXcml0ZS1PdXRwdXQgIlJQQ05FVCBEZXRlY3RhZG8iDQogICAgZXhpdCAwDQp9DQplbHNlIHsNCiAgICBleGl0IDENCn0=",
+            "comparisonValue": null,
+            "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptRule",
+            "runAsAccount": null,
+            "displayName": null,
+            "operationType": "notConfigured",
+            "runAs32Bit": false,
+            "ruleType": "detection",
+            "enforceSignatureCheck": false
+          }
+        ],
+        "returnCodes": [
+          {
+            "returnCode": 0,
+            "type": "success"
+          },
+          {
+            "returnCode": 1707,
+            "type": "success"
+          },
+          {
+            "returnCode": 3010,
+            "type": "softReboot"
+          },
+          {
+            "returnCode": 1641,
+            "type": "hardReboot"
+          },
+          {
+            "returnCode": 1618,
+            "type": "retry"
+          }
+        ],
+        "applicableArchitectures": "x86,x64",
+        "size": 172050656,
+        "developer": "Absolute",
+        "committedContentVersion": "1",
+        "setupFilePath": "AbsoluteFullAgent.msi",
+        "lastModifiedDateTime": "2024-12-24T13:12:37Z",
+        "isFeatured": false,
+        "@odata.type": "#microsoft.graph.win32LobApp",
+        "msiInformation": {
+          "productCode": "{FF7DC379-95D6-4E8A-B543-F099C9577B07}",
+          "productName": "Absolute Full Agent",
+          "publisher": "Absolute Software Corp.",
+          "upgradeCode": "{C78A7295-4E51-4137-AE21-5C6144350A33}",
+          "packageType": "perMachine",
+          "productVersion": "9.1.0.1",
+          "requiresReboot": false
+        },
+        "createdDateTime": "2024-10-10T13:50:14Z",
+        "informationUrl": null
+      },
+      "assignments": [
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "745a6c36-68b0-4624-ba7c-9074f1c83ab7",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "745a6c36-68b0-4624-ba7c-9074f1c83ab7_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "ab52ae21-23a4-41b8-9b38-0da931041679",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "ab52ae21-23a4-41b8-9b38-0da931041679_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "ed0740dd-ac03-404f-8ebf-9a549ffb2b73",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "ed0740dd-ac03-404f-8ebf-9a549ffb2b73_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "1d4dcfc3-0554-4e48-9052-09a918c7f3bb",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "1d4dcfc3-0554-4e48-9052-09a918c7f3bb_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "e6101828-7a7a-4454-8191-e8a5c5f446b6",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "e6101828-7a7a-4454-8191-e8a5c5f446b6_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "731b1228-1115-49bc-bdf9-1cd3cc346e8e",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "731b1228-1115-49bc-bdf9-1cd3cc346e8e_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "478de6f1-7459-4234-98da-140b6b452d4d",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "478de6f1-7459-4234-98da-140b6b452d4d_1_0"
+        },
+        {
+          "intent": "required",
+          "settings": {
+            "deliveryOptimizationPriority": "notConfigured",
+            "notifications": "showAll",
+            "restartSettings": null,
+            "installTimeSettings": null,
+            "autoUpdateSettings": null,
+            "@odata.type": "#microsoft.graph.win32LobAppAssignmentSettings"
+          },
+          "target": {
+            "groupId": "67968c5d-a0b5-4850-96d4-445ef369b995",
+            "@odata.type": "#microsoft.graph.groupAssignmentTarget"
+          },
+          "id": "67968c5d-a0b5-4850-96d4-445ef369b995_1_0"
+        }
+      ],
+      "assignments_error": null,
+      "categories": {
+        "displayName": "Computer Management",
+        "lastModifiedDateTime": "0001-01-01T00:00:00Z",
+        "id": "981deed8-6857-4e78-a50e-c3f61d312737"
+      },
+      "categories_error": null,
+      "relationships": null,
+      "relationships_error": null
+    }
+  ]
+}
