@@ -1,7 +1,7 @@
 import type { AuditApp, RuleResult, Severity } from "./types";
 
-export type QcGateDecision = "pending" | "accepted" | "rejected" | "accepted_with_exception";
-export type QcFindingStatus = "new" | "assigned_supplier" | "corrected" | "exception";
+export type QcGateDecision = "pending" | "accepted" | "rejected";
+export type QcFindingStatus = "new" | "assigned_supplier" | "corrected";
 export type SlaStatus = "within" | "at_risk" | "breached";
 
 export type QcTimelineEntry = {
@@ -12,16 +12,6 @@ export type QcTimelineEntry = {
   detail: string;
 };
 
-export type QcException = {
-  id: string;
-  ruleId: string;
-  reason: string;
-  validator: string;
-  ticketRef: string;
-  expiresAt: string;
-  createdAt: string;
-};
-
 export type QcFindingWorkflow = {
   ruleId: string;
   status: QcFindingStatus;
@@ -29,7 +19,6 @@ export type QcFindingWorkflow = {
   comment: string;
   updatedAt: string;
   history: QcTimelineEntry[];
-  exceptionId?: string;
 };
 
 export type QcAppWorkflow = {
@@ -40,7 +29,6 @@ export type QcAppWorkflow = {
   supplierSince?: string;
   internalSince?: string;
   findings: Record<string, QcFindingWorkflow>;
-  exceptions: QcException[];
   history: QcTimelineEntry[];
 };
 
@@ -73,7 +61,7 @@ export function daysBetween(start?: string, end?: string) {
 export function slaForFinding(rule: RuleResult, finding?: QcFindingWorkflow): { status: SlaStatus; age: number; limit: number } {
   const limit = SLA_BY_SEVERITY_DAYS[rule.severity];
   const age = ageInDays(finding?.updatedAt);
-  if (finding?.status === "corrected" || finding?.status === "exception") return { status: "within", age, limit };
+  if (finding?.status === "corrected") return { status: "within", age, limit };
   if (age > limit) return { status: "breached", age, limit };
   if (age >= Math.ceil(limit * 0.75)) return { status: "at_risk", age, limit };
   return { status: "within", age, limit };
@@ -104,7 +92,7 @@ export function packageHasRework(workflow: QcAppWorkflow) {
 
 export function isFirstTimeRight(app: AuditApp, workflow: QcAppWorkflow) {
   if (packageHasRework(workflow)) return false;
-  if (workflow.gateDecision === "accepted_with_exception" || workflow.gateDecision === "rejected") return false;
+  if (workflow.gateDecision === "rejected") return false;
   if (workflow.gateDecision === "accepted") return true;
   return app.status === "compliant";
 }

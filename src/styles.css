@@ -1557,6 +1557,74 @@ h1 {
   overflow-x: auto;
 }
 
+.qc-queue-wrap {
+  overflow-x: hidden;
+}
+
+.qc-queue-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.qc-queue-table th,
+.qc-queue-table td {
+  overflow-wrap: break-word;
+  padding: 12px 10px;
+  white-space: normal;
+}
+
+.qc-queue-table th:nth-child(1),
+.qc-queue-table td:nth-child(1) {
+  width: 26%;
+}
+
+.qc-queue-table th:nth-child(2),
+.qc-queue-table td:nth-child(2) {
+  width: 16%;
+}
+
+.qc-queue-table th:nth-child(3),
+.qc-queue-table td:nth-child(3) {
+  width: 11%;
+}
+
+.qc-queue-table th:nth-child(4),
+.qc-queue-table td:nth-child(4) {
+  width: 16%;
+}
+
+.qc-queue-table th:nth-child(5),
+.qc-queue-table td:nth-child(5) {
+  width: 15%;
+}
+
+.qc-queue-table th:nth-child(6),
+.qc-queue-table td:nth-child(6) {
+  width: 16%;
+}
+
+.qc-queue-table td strong {
+  display: block;
+  line-height: 1.35;
+}
+
+.qc-queue-table td:nth-child(2) {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.qc-queue-table .sla-pill,
+.qc-queue-table .finding-workflow-pill,
+.qc-queue-table .severity {
+  box-sizing: border-box;
+  height: auto;
+  justify-content: flex-start;
+  max-width: 100%;
+  min-height: 26px;
+  padding: 4px 8px;
+  white-space: normal;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -2978,8 +3046,7 @@ tbody tr:hover {
   gap: 22px;
 }
 
-.workflow-card,
-.exception-panel {
+.workflow-card {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -3070,10 +3137,8 @@ tbody tr:hover {
   color: #be123c;
 }
 
-.gate-pill.accepted_with_exception,
 .sla-pill.at_risk,
-.finding-workflow-pill.assigned_supplier,
-.finding-workflow-pill.exception {
+.finding-workflow-pill.assigned_supplier {
   background: #fff7ed;
   border: 1px solid rgba(146, 64, 14, 0.22);
   color: #92400e;
@@ -3195,9 +3260,7 @@ tbody tr:hover {
 }
 
 .work-queue-table input,
-.work-queue-table select,
-.exception-form input,
-.exception-form select {
+.work-queue-table select {
   background: #f8fafc;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -3211,65 +3274,9 @@ tbody tr:hover {
 }
 
 .work-queue-table input:focus,
-.work-queue-table select:focus,
-.exception-form input:focus,
-.exception-form select:focus {
+.work-queue-table select:focus {
   border-color: rgba(79, 70, 229, 0.36);
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
-}
-
-.exception-form {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.exception-form label {
-  display: grid;
-  gap: 7px;
-}
-
-.exception-form label:first-child,
-.exception-form label:nth-child(2) {
-  grid-column: 1 / -1;
-}
-
-.exception-form label span {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 760;
-}
-
-.exception-form button {
-  align-self: end;
-}
-
-.exception-list {
-  display: grid;
-  gap: 10px;
-}
-
-.exception-list article {
-  background: #fff7ed;
-  border: 1px solid rgba(146, 64, 14, 0.18);
-  border-radius: var(--radius);
-  display: grid;
-  gap: 5px;
-  padding: 13px;
-}
-
-.exception-list strong {
-  color: #92400e;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.exception-list span,
-.exception-list em {
-  color: var(--text-soft);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 560;
 }
 
 .timeline {

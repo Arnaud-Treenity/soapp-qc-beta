@@ -14,7 +14,6 @@ import {
   Info,
   ClipboardCheck,
   Gauge,
-  Inbox,
   LayoutDashboard,
   ListChecks,
   Loader2,
@@ -26,7 +25,6 @@ import {
   RefreshCw,
   Search,
   Settings,
-  ShieldAlert,
   ShieldCheck,
   SlidersHorizontal,
   Target,
@@ -58,7 +56,6 @@ import {
   slaForFinding,
   workflowSla,
   type QcAppWorkflow,
-  type QcException,
   type QcFindingStatus,
   type QcFindingWorkflow,
   type QcGateDecision,
@@ -68,15 +65,7 @@ import {
 } from "./lib/qc";
 import type { AuditApp, AuditModel, AuditStatus, DetectionRuleKind, GuidelineRule, RuleResult, ScoringConfig, Severity } from "./lib/types";
 
-type ViewKey = "overview" | "requests" | "packages" | "qcQueue" | "findings" | "rules" | "exceptions" | "assignments" | "supplierPerformance";
-
-type ExceptionDraft = {
-  ruleId: string;
-  reason: string;
-  validator: string;
-  ticketRef: string;
-  expiresAt: string;
-};
+type ViewKey = "overview" | "packages" | "qcQueue" | "findings" | "rules" | "assignments" | "supplierPerformance";
 
 const STATUS_COLORS: Record<AuditStatus, string> = {
   compliant: "#10b981",
@@ -106,7 +95,6 @@ const NAV_SECTIONS: { labelKey: string; items: { key: ViewKey; labelKey: string;
     labelKey: "operations",
     items: [
       { key: "overview", labelKey: "overview", icon: LayoutDashboard },
-      { key: "requests", labelKey: "requests", icon: Inbox },
       { key: "packages", labelKey: "packages", icon: Package },
       { key: "qcQueue", labelKey: "qcQueue", icon: ClipboardCheck },
     ],
@@ -116,7 +104,6 @@ const NAV_SECTIONS: { labelKey: string; items: { key: ViewKey; labelKey: string;
     items: [
       { key: "findings", labelKey: "findings", icon: AlertCircle },
       { key: "rules", labelKey: "rulesBaselines", icon: ListChecks },
-      { key: "exceptions", labelKey: "exceptions", icon: ShieldAlert },
     ],
   },
   {
@@ -249,7 +236,6 @@ function buildDefaultWorkflow(app: AuditApp): QcAppWorkflow {
     gateComment: "",
     internalSince: baseDate,
     findings,
-    exceptions: [],
     history: [
       timelineEntry("Intune snapshot", `${app.name} - ${app.score}%`, baseDate),
     ],
@@ -292,13 +278,11 @@ function gateDecisionLabel(language: Language, decision: QcGateDecision) {
       pending: "En attente de décision",
       accepted: "Accepté",
       rejected: "Rejeté et retourné au fournisseur",
-      accepted_with_exception: "Accepté avec dérogation",
     },
     en: {
       pending: "Pending decision",
       accepted: "Accepted",
       rejected: "Rejected and returned to supplier",
-      accepted_with_exception: "Accepted with exception",
     },
   };
   return labels[language][decision];
@@ -310,13 +294,11 @@ function findingStatusLabel(language: Language, status: QcFindingStatus) {
       new: "Nouveau",
       assigned_supplier: "Assigné au fournisseur",
       corrected: "Corrigé",
-      exception: "Dérogation",
     },
     en: {
       new: "New",
       assigned_supplier: "Assigned to supplier",
       corrected: "Corrected",
-      exception: "Exception",
     },
   };
   return labels[language][status];
@@ -459,55 +441,13 @@ export default function App() {
       return {
         ...workflow,
         supplierSince: patch.status === "assigned_supplier" ? nextFinding.updatedAt : workflow.supplierSince,
-        internalSince: patch.status === "corrected" || patch.status === "exception" ? nextFinding.updatedAt : workflow.internalSince,
+        internalSince: patch.status === "corrected" ? nextFinding.updatedAt : workflow.internalSince,
         findings: {
           ...workflow.findings,
           [ruleId]: nextFinding,
         },
         history: [
           timelineEntry("Work queue", `${ruleId} - ${findingWorkflowDetail(language, patch)}`),
-          ...workflow.history,
-        ],
-      };
-    });
-  };
-
-  const createException = (app: AuditApp, draft: ExceptionDraft) => {
-    updateAppWorkflow(app, (workflow) => {
-      const createdAt = new Date().toISOString();
-      const exception: QcException = {
-        id: `EXC-${Date.now()}`,
-        ruleId: draft.ruleId,
-        reason: draft.reason.trim(),
-        validator: draft.validator.trim(),
-        ticketRef: draft.ticketRef.trim(),
-        expiresAt: draft.expiresAt,
-        createdAt,
-      };
-      const currentFinding = workflow.findings[draft.ruleId] ?? buildDefaultFindingWorkflow(draft.ruleId, app);
-      const finding = {
-        ...currentFinding,
-        status: "exception" as QcFindingStatus,
-        comment: exception.reason,
-        exceptionId: exception.id,
-        updatedAt: createdAt,
-        history: [
-          timelineEntry("Exception", `${exception.ticketRef} - ${exception.validator}`),
-          ...currentFinding.history,
-        ],
-      };
-      return {
-        ...workflow,
-        gateDecision: "accepted_with_exception",
-        gateUpdatedAt: createdAt,
-        exceptions: [exception, ...workflow.exceptions],
-        findings: {
-          ...workflow.findings,
-          [draft.ruleId]: finding,
-        },
-        history: [
-          timelineEntry("Exception", `${draft.ruleId} - ${exception.ticketRef}`),
-          timelineEntry("QC gate", gateDecisionLabel(language, "accepted_with_exception")),
           ...workflow.history,
         ],
       };
@@ -531,12 +471,10 @@ export default function App() {
     counts.packages = model.apps.length;
     counts.rules = model.rules.length;
     counts.findings = model.stats.openFindings;
-    counts.requests = model.apps.filter((app) => (workflows[app.id]?.gateDecision ?? "pending") === "pending").length;
     counts.qcQueue = model.apps.reduce((sum, app) => {
       const workflow = workflows[app.id];
       return sum + app.rules.filter((rule) => isOpenRule(rule) && isActionableFinding(workflow?.findings[rule.id])).length;
     }, 0);
-    counts.exceptions = Object.values(workflows).reduce((sum, workflow) => sum + workflow.exceptions.length, 0);
     return counts;
   }, [model, workflows]);
 
@@ -620,9 +558,6 @@ export default function App() {
                 onOpenQueue={() => changeView("qcQueue")}
               />
             )}
-            {activeView === "requests" && (
-              <RequestsView apps={filteredApps} workflows={workflows} onSelectApp={setSelectedApp} />
-            )}
             {activeView === "packages" && (
               <InventoryView apps={filteredApps} onSelectApp={setSelectedApp} />
             )}
@@ -641,9 +576,6 @@ export default function App() {
                 onSelectApp={setSelectedApp}
               />
             )}
-            {activeView === "exceptions" && (
-              <ExceptionsView apps={filteredApps} workflows={workflows} onSelectApp={setSelectedApp} />
-            )}
             {activeView === "assignments" && (
               <AssignmentsView apps={filteredApps} onSelectApp={setSelectedApp} />
             )}
@@ -657,7 +589,6 @@ export default function App() {
           <AppDrawer
             app={selectedApp}
             workflow={workflows[selectedApp.id] ?? buildDefaultWorkflow(selectedApp)}
-            onAddException={createException}
             onClose={() => setSelectedApp(null)}
             onUpdateFinding={updateFindingWorkflow}
             onUpdateGate={updateGateDecision}
@@ -1246,81 +1177,6 @@ function ProgressList({ compact = false, rows }: { compact?: boolean; rows: Prog
   );
 }
 
-function RequestsView({
-  apps,
-  workflows,
-  onSelectApp,
-}: {
-  apps: AuditApp[];
-  workflows: QcWorkflowStore;
-  onSelectApp: (app: AuditApp) => void;
-}) {
-  const { language } = useLocale();
-  const requests = apps
-    .filter((app) => (workflows[app.id]?.gateDecision ?? "pending") === "pending")
-    .sort((left, right) => left.score - right.score);
-
-  return (
-    <section>
-      <PageHeading title={t(language, "requestsTitle")} subtitle={t(language, "requestsSubtitle")} />
-      {requests.length === 0 ? (
-        <article className="empty-panel">
-          <CheckCircle2 size={22} />
-          <strong>{t(language, "requestsEmpty")}</strong>
-        </article>
-      ) : (
-        <article className="table-card">
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>{t(language, "application")}</th>
-                  <th>{t(language, "owner")}</th>
-                  <th>{t(language, "received")}</th>
-                  <th>{t(language, "openFindingsShort")}</th>
-                  <th>{t(language, "sla")}</th>
-                  <th>{t(language, "qcGate")}</th>
-                  <th>{t(language, "actions")}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {requests.map((app) => {
-                  const workflow = workflows[app.id] ?? buildDefaultWorkflow(app);
-                  const sla = workflowSla(app, workflow);
-                  const openCount = app.rules.filter(isOpenRule).length;
-                  return (
-                    <tr key={app.id}>
-                      <td>
-                        <div className="app-cell">
-                          <div className="app-icon">{app.platform === "macOS" ? "mac" : "win"}</div>
-                          <div>
-                            <strong>{app.name}</strong>
-                            <span>{app.version}</span>
-                          </div>
-                        </div>
-                      </td>
-                      <td>{app.owner}</td>
-                      <td>{formatDate(app.lastModified, language)}</td>
-                      <td>{openCount}</td>
-                      <td><SlaPill status={sla.status} detail={sla.limit ? `${sla.age}/${sla.limit}j` : undefined} /></td>
-                      <td>{gateDecisionLabel(language, workflow.gateDecision)}</td>
-                      <td>
-                        <button className="icon-button" type="button" onClick={() => onSelectApp(app)} aria-label={`${t(language, "open")} ${app.name}`}>
-                          <ChevronRight size={20} />
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </article>
-      )}
-    </section>
-  );
-}
-
 function QcQueueView({
   apps,
   workflows,
@@ -1357,8 +1213,8 @@ function QcQueueView({
         </article>
       ) : (
         <article className="table-card">
-          <div className="table-wrap">
-            <table>
+          <div className="table-wrap qc-queue-wrap">
+            <table className="qc-queue-table">
               <thead>
                 <tr>
                   <th>{t(language, "application")}</th>
@@ -1381,69 +1237,6 @@ function QcQueueView({
                     <td><span className={`finding-workflow-pill ${finding.status}`}>{findingStatusLabel(language, finding.status)}</span></td>
                     <td>{finding.assignee || t(language, "notProvided")}</td>
                     <td><SlaPill status={sla.status} detail={`${sla.age}/${sla.limit}j`} /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </article>
-      )}
-    </section>
-  );
-}
-
-function ExceptionsView({
-  apps,
-  workflows,
-  onSelectApp,
-}: {
-  apps: AuditApp[];
-  workflows: QcWorkflowStore;
-  onSelectApp: (app: AuditApp) => void;
-}) {
-  const { language } = useLocale();
-  const appsById = new Map(apps.map((app) => [app.id, app]));
-  const exceptions = Object.values(workflows).flatMap((workflow) =>
-    workflow.exceptions.map((exception) => ({
-      exception,
-      app: appsById.get(workflow.appId),
-    })),
-  ).filter((entry): entry is { exception: QcException; app: AuditApp } => Boolean(entry.app));
-
-  return (
-    <section>
-      <PageHeading
-        title={t(language, "exceptionsTitle")}
-        subtitle={`${exceptions.length} ${t(language, "exceptionsSubtitle")}`}
-      />
-      {exceptions.length === 0 ? (
-        <article className="empty-panel">
-          <ShieldAlert size={22} />
-          <strong>{t(language, "exceptionsEmpty")}</strong>
-        </article>
-      ) : (
-        <article className="table-card">
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>{t(language, "application")}</th>
-                  <th>{t(language, "relatedRule")}</th>
-                  <th>{t(language, "exceptionReason")}</th>
-                  <th>{t(language, "validator")}</th>
-                  <th>{t(language, "referenceTicket")}</th>
-                  <th>{t(language, "expires")}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {exceptions.map(({ app, exception }) => (
-                  <tr className="clickable-row" key={exception.id} onClick={() => onSelectApp(app)}>
-                    <td><strong>{app.name}</strong></td>
-                    <td>{exception.ruleId}</td>
-                    <td>{exception.reason}</td>
-                    <td>{exception.validator}</td>
-                    <td>{exception.ticketRef}</td>
-                    <td>{formatDate(exception.expiresAt, language)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -2417,14 +2210,12 @@ function useDialogFocus<T extends HTMLElement>() {
 function AppDrawer({
   app,
   workflow,
-  onAddException,
   onClose,
   onUpdateFinding,
   onUpdateGate,
 }: {
   app: AuditApp;
   workflow: QcAppWorkflow;
-  onAddException: (app: AuditApp, draft: ExceptionDraft) => void;
   onClose: () => void;
   onUpdateFinding: (app: AuditApp, ruleId: string, patch: Partial<Pick<QcFindingWorkflow, "status" | "assignee" | "comment">>) => void;
   onUpdateGate: (app: AuditApp, decision: QcGateDecision) => void;
@@ -2523,7 +2314,6 @@ function AppDrawer({
           {activeTab === "qc" && (
             <div className="package-tab-panel">
               <WorkQueuePanel app={app} workflow={workflow} onUpdateFinding={onUpdateFinding} />
-              <ExceptionPanel app={app} workflow={workflow} onAddException={onAddException} />
               <section>
                 <h3>{t(language, "ruleControl")}</h3>
                 <div className="rule-checks">
@@ -2584,7 +2374,7 @@ function AppDrawer({
 
 function WorkflowGate({ app, workflow, onUpdateGate }: { app: AuditApp; workflow: QcAppWorkflow; onUpdateGate: (app: AuditApp, decision: QcGateDecision) => void }) {
   const { language } = useLocale();
-  const decisions: QcGateDecision[] = ["accepted", "rejected", "accepted_with_exception"];
+  const decisions: QcGateDecision[] = ["accepted", "rejected"];
 
   return (
     <section className="workflow-card">
@@ -2671,7 +2461,7 @@ function WorkQueuePanel({
                     </td>
                     <td>
                       <select value={finding.status} onChange={(event) => onUpdateFinding(app, rule.id, { status: event.target.value as QcFindingStatus })}>
-                        {(["new", "assigned_supplier", "corrected", "exception"] as QcFindingStatus[]).map((status) => (
+                        {(["new", "assigned_supplier", "corrected"] as QcFindingStatus[]).map((status) => (
                           <option key={status} value={status}>{findingStatusLabel(language, status)}</option>
                         ))}
                       </select>
@@ -2705,82 +2495,6 @@ function WorkQueuePanel({
         <div className="success-box">
           <CheckCircle2 size={22} />
           {t(language, "noOpenFinding")}
-        </div>
-      )}
-    </section>
-  );
-}
-
-function ExceptionPanel({ app, workflow, onAddException }: { app: AuditApp; workflow: QcAppWorkflow; onAddException: (app: AuditApp, draft: ExceptionDraft) => void }) {
-  const { language } = useLocale();
-  const openRules = app.rules.filter(isOpenRule);
-  const [draft, setDraft] = useState<ExceptionDraft>(() => ({
-    ruleId: openRules[0]?.id ?? "",
-    reason: "",
-    validator: "",
-    ticketRef: "",
-    expiresAt: "",
-  }));
-  const canCreate = Boolean(draft.ruleId && draft.reason.trim() && draft.validator.trim() && draft.ticketRef.trim() && draft.expiresAt);
-
-  useEffect(() => {
-    if (!draft.ruleId && openRules[0]) setDraft((current) => ({ ...current, ruleId: openRules[0].id }));
-  }, [draft.ruleId, openRules]);
-
-  const create = () => {
-    if (!canCreate) return;
-    onAddException(app, draft);
-    setDraft({
-      ruleId: openRules[0]?.id ?? "",
-      reason: "",
-      validator: "",
-      ticketRef: "",
-      expiresAt: "",
-    });
-  };
-
-  return (
-    <section className="exception-panel">
-      <h3>{t(language, "exceptions")}</h3>
-      <div className="exception-form">
-        <label>
-          <span>{t(language, "relatedRule")}</span>
-          <select value={draft.ruleId} onChange={(event) => setDraft((current) => ({ ...current, ruleId: event.target.value }))}>
-            {openRules.map((rule) => (
-              <option key={rule.id} value={rule.id}>{rule.id} - {shortRuleTitle(rule, language)}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>{t(language, "exceptionReason")}</span>
-          <input value={draft.reason} onChange={(event) => setDraft((current) => ({ ...current, reason: event.target.value }))} />
-        </label>
-        <label>
-          <span>{t(language, "validator")}</span>
-          <input value={draft.validator} onChange={(event) => setDraft((current) => ({ ...current, validator: event.target.value }))} />
-        </label>
-        <label>
-          <span>{t(language, "referenceTicket")}</span>
-          <input value={draft.ticketRef} onChange={(event) => setDraft((current) => ({ ...current, ticketRef: event.target.value }))} />
-        </label>
-        <label>
-          <span>{t(language, "expirationDate")}</span>
-          <input type="date" value={draft.expiresAt} onChange={(event) => setDraft((current) => ({ ...current, expiresAt: event.target.value }))} />
-        </label>
-        <button className="primary-button" type="button" disabled={!canCreate} onClick={create}>
-          <Plus size={17} />
-          {t(language, "declareException")}
-        </button>
-      </div>
-      {workflow.exceptions.length > 0 && (
-        <div className="exception-list">
-          {workflow.exceptions.map((exception) => (
-            <article key={exception.id}>
-              <strong>{exception.ruleId} - {exception.ticketRef}</strong>
-              <span>{exception.reason}</span>
-              <em>{t(language, "validator")} : {exception.validator} · {t(language, "expirationDate")} : {formatDate(exception.expiresAt, language)}</em>
-            </article>
-          ))}
         </div>
       )}
     </section>

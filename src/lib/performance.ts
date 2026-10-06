@@ -156,7 +156,6 @@ function workflowFor(app: AuditApp, workflows: QcWorkflowStore): QcAppWorkflow {
         history: [],
       }]),
     ),
-    exceptions: [],
     history: [],
   };
 }
