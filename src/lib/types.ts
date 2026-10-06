@@ -97,6 +97,8 @@ export type DetectionRuleView = {
 export type AssignmentView = {
   intent: string;
   target: string;
+  targetId?: string;
+  targetResolved: boolean;
   mode: "included" | "excluded";
   notifications: string;
 };

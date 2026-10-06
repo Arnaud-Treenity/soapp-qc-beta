@@ -8,13 +8,14 @@ import type {
   RawAssignment,
   RawAuditFile,
   RawAuditRecord,
-  RuleCatalogFile,
   RuleResult,
   ScoringConfig,
 } from "./types";
+import { dataClient } from "../api";
 import { ruleCopy, severityLabel, statusLabel as localizedStatusLabel, type Language } from "./i18n";
 
 const CHECKED_RULE_IDS = [
+  "PRE-DUP-001",
   "INT-OWN-001",
   "INT-CAT-001",
   "INT-FEATURED-001",
@@ -30,6 +31,10 @@ const CHECKED_RULE_IDS = [
   "DEP-TARGET-001",
   "PKG-PATH-001",
 ];
+
+type EvaluationContext = {
+  duplicateNamesByAppId: Map<string, string[]>;
+};
 
 export const DEFAULT_SCORING_CONFIG: ScoringConfig = {
   version: 1,
@@ -62,35 +67,41 @@ export const DEFAULT_SCORING_CONFIG: ScoringConfig = {
 const AUDIT_TEXT: Record<Language, Record<string, string>> = {
   fr: {
     unnamedApp: "Application sans nom",
-    unknownPublisher: "Editeur non renseigne",
-    unknownVersion: "Version non renseignee",
-    unassigned: "Non assigne",
+    unknownPublisher: "Éditeur non renseigné",
+    unknownVersion: "Version non renseignée",
+    unassigned: "Non assigné",
     sourceLabel: "Graph API + export Intune",
-    ownerMissing: "Proprietaire manquant",
-    categoryMissing: "Categorie absente ou non collectee",
-    featuredOn: "Featured active",
-    featuredOff: "Featured desactive",
+    ownerMissing: "Propriétaire manquant",
+    categoryMissing: "Catégorie absente ou non collectée",
+    featuredOn: "Featured activé",
+    featuredOff: "Featured désactivé",
     installCommandUnavailable: "Commande d'installation non disponible",
-    nonBlockingControl: "controle non bloquant",
+    nonBlockingControl: "contrôle non bloquant",
     runAsMissing: "runAsAccount absent",
-    restartMissing: "Comportement de redemarrage absent",
+    restartMissing: "Comportement de redémarrage absent",
     returnCodesMissing: "Codes retour absents",
-    architectureMissing: "Architecture non renseignee",
-    hardwareSet: "Prerequis hardware renseignes",
-    noHardware: "Aucun prerequis hardware specifique",
-    detectionNotEvaluated: "regle non evaluee en V0",
-    detectionMissing: "Aucune regle de detection",
-    assignmentsNotCollected: "Deploiements non collectes via Graph",
-    noAssignment: "Aucun assignment detecte",
-    allUsersDetected: "All Users detecte",
-    noAllUsersDetected: "Pas de ciblage All Users detecte",
+    architectureMissing: "Architecture non renseignée",
+    hardwareSet: "Prérequis hardware renseignés",
+    noHardware: "Aucun prérequis hardware spécifique",
+    detectionNotEvaluated: "règle non évaluée en V0",
+    detectionMissing: "Aucune règle de détection",
+    assignmentsNotCollected: "Déploiements non collectés via Graph",
+    noAssignment: "Aucun assignment détecté",
+    allUsersDetected: "All Users détecté",
+    noAllUsersDetected: "Pas de ciblage All Users détecté",
+    noDuplicateDetected: "Aucun doublon détecté dans le périmètre",
+    possibleDuplicate: "Doublon potentiel détecté",
+    deadPackageMarker: "Marqueur de package ancien ou à retirer détecté",
+    ownerNamingMismatch: "Convention owner incohérente",
+    assignmentConflict: "Conflit de ciblage inclusion/exclusion",
+    orphanAssignmentTarget: "Groupe Entra ID non résolu",
     packageSourceRequired: "Package source requis",
-    unresolvedTarget: "Cible non resolue",
-    scriptDetection: "detection par script",
+    unresolvedTarget: "Cible non résolue",
+    scriptDetection: "détection par script",
     missingPath: "Chemin manquant",
     unknown: "Inconnu",
     ownerGap: "Ownership",
-    detectionGap: "Detection",
+    detectionGap: "Détection",
     assignmentGap: "Ciblage",
     returnCodeGap: "Codes retour",
     sourceGap: "Source package",
@@ -119,6 +130,12 @@ const AUDIT_TEXT: Record<Language, Record<string, string>> = {
     noAssignment: "No assignment detected",
     allUsersDetected: "All Users detected",
     noAllUsersDetected: "No All Users targeting detected",
+    noDuplicateDetected: "No duplicate detected in scope",
+    possibleDuplicate: "Potential duplicate detected",
+    deadPackageMarker: "Old or removal package marker detected",
+    ownerNamingMismatch: "Inconsistent owner naming convention",
+    assignmentConflict: "Include/exclude targeting conflict",
+    orphanAssignmentTarget: "Unresolved Entra ID group",
     packageSourceRequired: "Package source required",
     unresolvedTarget: "Unresolved target",
     scriptDetection: "script detection",
@@ -164,14 +181,17 @@ export async function loadAuditModel(
   customRules?: GuidelineRule[],
 ): Promise<AuditModel> {
   const config = normalizeScoringConfig(scoringConfig);
-  const [auditFile, ruleFile] = await Promise.all([
-    fetch(`${import.meta.env.BASE_URL}data/intune_apps_sample_30.json`).then((r) => r.json()) as Promise<RawAuditFile>,
-    fetch(`${import.meta.env.BASE_URL}data/guidelines_rules_v1.json`).then((r) => r.json()) as Promise<RuleCatalogFile>,
+  const [auditFile, baselineRules] = await Promise.all([
+    dataClient.packages.loadSnapshot(),
+    customRules ? Promise.resolve(customRules) : dataClient.rules.loadBaseline(),
   ]);
 
-  const rules = customRules ?? ruleFile.rules;
+  const rules = baselineRules;
   const rulesById = new Map(rules.map((rule) => [rule.id, rule]));
-  const apps = auditFile.records.map((record) => buildAuditApp(record, auditFile.groups, rulesById, config, language));
+  const context: EvaluationContext = {
+    duplicateNamesByAppId: buildDuplicateCatalog(auditFile.records),
+  };
+  const apps = auditFile.records.map((record) => buildAuditApp(record, auditFile.groups, rulesById, config, language, context));
   const appScores = apps.map((app) => app.score);
   const globalScore = Math.round(appScores.reduce((sum, score) => sum + score, 0) / Math.max(1, appScores.length));
   const allRuleResults = apps.flatMap((app) => app.rules).filter((rule) => rule.scoringEnabled);
@@ -192,7 +212,7 @@ export async function loadAuditModel(
       globalScore,
       appCount: apps.length,
       compliantApps: apps.filter((app) => app.status === "compliant").length,
-      criticalFindings: violations.filter((rule) => rule.severity === "critical").length,
+      criticalFindings: openFindings.filter((rule) => rule.severity === "critical").length,
       nonVerifiableRules: allRuleResults.filter((rule) => rule.status === "non_verifiable").length,
       openFindings: openFindings.length,
       nonCompliantApps: apps.filter((app) => app.status !== "compliant" && app.status !== "exception").length,
@@ -219,6 +239,7 @@ function buildAuditApp(
   rulesById: Map<string, GuidelineRule>,
   scoringConfig: ScoringConfig,
   language: Language,
+  context: EvaluationContext,
 ): AuditApp {
   const app = record.app;
   const assignments = normalizeAssignments(record.assignments, groups, language);
@@ -226,7 +247,7 @@ function buildAuditApp(
   const returnCodes = normalizeReturnCodes(app.returnCodes);
   const type = appType(String(app["@odata.type"] ?? ""));
   const owner = cleanString(app.owner);
-  const results = CHECKED_RULE_IDS.map((id) => evaluateRule(id, record, groups, rulesById, scoringConfig, language)).filter(Boolean) as RuleResult[];
+  const results = CHECKED_RULE_IDS.map((id) => evaluateRule(id, record, groups, rulesById, scoringConfig, language, context)).filter(Boolean) as RuleResult[];
   const score = computeScore(results, scoringConfig);
   const status = computeAppStatus(score, results, scoringConfig);
 
@@ -255,6 +276,7 @@ function evaluateRule(
   rulesById: Map<string, GuidelineRule>,
   scoringConfig: ScoringConfig,
   language: Language,
+  context: EvaluationContext,
 ): RuleResult | undefined {
   const rule = rulesById.get(id);
   if (!rule) return undefined;
@@ -267,9 +289,32 @@ function evaluateRule(
   const installExperience = app.installExperience as Record<string, unknown> | undefined;
 
   switch (id) {
+    case "PRE-DUP-001": {
+      const appId = cleanString(app.id);
+      const appName = cleanString(app.displayName);
+      const duplicateNames = context.duplicateNamesByAppId.get(appId) ?? [];
+      const deadMarker = hasDeadPackageMarker(appName);
+      if (duplicateNames.length || deadMarker) {
+        return result(
+          rule,
+          "to_clarify",
+          compactJoin([
+            duplicateNames.length ? `${label(language, "possibleDuplicate")}: ${duplicateNames.join(", ")}` : "",
+            deadMarker ? label(language, "deadPackageMarker") : "",
+          ]),
+          scoringConfig,
+          language,
+        );
+      }
+      return result(rule, "compliant", label(language, "noDuplicateDetected"), scoringConfig, language);
+    }
     case "INT-OWN-001": {
       const owner = cleanString(app.owner);
-      return result(rule, owner ? "compliant" : "non_compliant", owner || label(language, "ownerMissing"), scoringConfig, language);
+      if (!owner) return result(rule, "non_compliant", label(language, "ownerMissing"), scoringConfig, language);
+      if (!isOwnerConventionConsistent(owner)) {
+        return result(rule, "to_clarify", `${label(language, "ownerNamingMismatch")}: ${owner}`, scoringConfig, language);
+      }
+      return result(rule, "compliant", owner, scoringConfig, language);
     }
     case "INT-CAT-001": {
       const categories = normalizeCategories(record.categories);
@@ -341,7 +386,11 @@ function evaluateRule(
     }
     case "DEP-GROUP-001": {
       if (record.assignments_error) return result(rule, "non_verifiable", label(language, "assignmentsNotCollected"), scoringConfig, language);
-      if (!assignments.length) return result(rule, "to_clarify", label(language, "noAssignment"), scoringConfig, language);
+      if (!assignments.length) return result(rule, "non_compliant", label(language, "noAssignment"), scoringConfig, language);
+      const conflict = findAssignmentConflict(assignments);
+      if (conflict) return result(rule, "non_compliant", `${label(language, "assignmentConflict")}: ${conflict}`, scoringConfig, language);
+      const unresolvedTarget = assignments.find((assignment) => !assignment.targetResolved);
+      if (unresolvedTarget) return result(rule, "to_clarify", `${label(language, "orphanAssignmentTarget")}: ${unresolvedTarget.target}`, scoringConfig, language);
       const hasTestMarker = assignments.some((assignment) => /test|poc/i.test(assignment.target));
       return result(
         rule,
@@ -417,14 +466,81 @@ function normalizeAssignments(assignments: RawAssignment[] | undefined, groups: 
   return assignments.map((assignment) => {
     const targetType = assignment.target?.["@odata.type"] ?? "";
     const groupId = assignment.target?.groupId ?? "";
-    const groupName = groupId ? groups[groupId]?.displayName || groupId : targetTypeLabel(targetType, language);
+    const resolvedGroupName = groupId ? groups[groupId]?.displayName : undefined;
+    const groupName = groupId ? resolvedGroupName || groupId : targetTypeLabel(targetType, language);
     return {
       intent: assignment.intent || "unknown",
       target: groupName,
+      targetId: groupId || undefined,
+      targetResolved: groupId ? Boolean(resolvedGroupName) : true,
       mode: targetType.includes("exclusion") ? "excluded" : "included",
       notifications: cleanString(assignment.settings?.notifications) || "notConfigured",
     };
   });
+}
+
+function buildDuplicateCatalog(records: RawAuditRecord[]): Map<string, string[]> {
+  const groups = new Map<string, { id: string; name: string }[]>();
+
+  for (const record of records) {
+    const id = cleanString(record.app.id);
+    const name = cleanString(record.app.displayName);
+    const normalized = normalizeAppComparableName(name);
+    if (!id || !name || normalized.length < 3) continue;
+    const current = groups.get(normalized) ?? [];
+    current.push({ id, name });
+    groups.set(normalized, current);
+  }
+
+  const duplicates = new Map<string, string[]>();
+  for (const apps of groups.values()) {
+    const uniqueNames = [...new Set(apps.map((app) => app.name))];
+    if (uniqueNames.length < 2) continue;
+    for (const app of apps) {
+      duplicates.set(app.id, uniqueNames.filter((name) => name !== app.name));
+    }
+  }
+  return duplicates;
+}
+
+function normalizeAppComparableName(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\[[^\]]+\]/g, " ")
+    .replace(/\([^)]*\b(glb|old|prod|dev|test|x64|x86)\b[^)]*\)/g, " ")
+    .replace(/\b(do not remove|old|glb|prod|dev|test|x64|x86|win32|win)\b/g, " ")
+    .replace(/\b\d+(\.\d+){1,4}\b/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hasDeadPackageMarker(name: string): boolean {
+  return /\b(do not remove|old|deprecated|retired|obsolete)\b/i.test(name);
+}
+
+function isOwnerConventionConsistent(owner: string): boolean {
+  if (/^(glb|global)\s*-\s*uem$/i.test(owner)) return true;
+  return /^[A-Z0-9]{2,6}\s-\s[A-Z0-9][A-Z0-9 -]{1,}$/i.test(owner);
+}
+
+function findAssignmentConflict(assignments: AssignmentView[]): string | null {
+  const modesByTarget = new Map<string, Set<AssignmentView["mode"]>>();
+  for (const assignment of assignments) {
+    const key = assignment.targetId || assignment.target;
+    const modes = modesByTarget.get(key) ?? new Set<AssignmentView["mode"]>();
+    modes.add(assignment.mode);
+    modesByTarget.set(key, modes);
+  }
+
+  for (const assignment of assignments) {
+    const key = assignment.targetId || assignment.target;
+    const modes = modesByTarget.get(key);
+    if (modes?.has("included") && modes.has("excluded")) return assignment.target;
+  }
+  return null;
 }
 
 function targetTypeLabel(targetType: string, language: Language): string {
